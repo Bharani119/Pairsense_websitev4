@@ -96,83 +96,103 @@ export default function Contact() {
         </div>
       </div>
 
-      {/* form block — deep forest green, light text */}
-      <div
-        id="contact-form"
-        className="relative py-24 md:py-32"
-        style={{ background: "linear-gradient(180deg, var(--ink) 0%, var(--ink-soft) 100%)" }}
-      >
-        <div
-          aria-hidden
-          className="absolute inset-0 pointer-events-none opacity-[0.09] mix-blend-overlay"
-          style={{
-            backgroundImage:
-              "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
-          }}
-        />
-        <div
-          aria-hidden
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(60% 50% at 85% 10%, rgba(176,139,79,0.20) 0%, transparent 70%), radial-gradient(50% 55% at 5% 100%, rgba(197,204,182,0.18) 0%, transparent 70%)",
-          }}
-        />
+      {/* form block — main background cream; only the left meta panel is forest-green */}
+      <div id="contact-form" className="relative py-24 md:py-32">
         <div className="container-wide relative">
           <div className="grid grid-cols-12 gap-10">
-            {/* Left: meta */}
+            {/* Left: forest-green meta panel */}
             <div className="col-span-12 lg:col-span-4">
-              <Reveal>
-                <div className="eyebrow" style={{ color: "rgba(246,243,234,0.55)" }}>
-                  <span
-                    className="rule"
-                    style={{ background: "rgba(246,243,234,0.6)" }}
-                  />
-                  Brief Intake · 09
-                </div>
-                <h3 className="display mt-6 text-[clamp(32px,3.4vw,52px)] leading-[1] text-bg">
-                  Send a brief.
-                  <br />
-                  <span className="italic text-gold">We&apos;ll listen first.</span>
-                </h3>
-                <p className="mt-6 text-[14px] leading-[1.8] text-bg/70 max-w-[40ch]">
-                  All submissions are handled under confidentiality. Our team
-                  will reply with a curated formulation path, projected
-                  timelines, and sampling options.
-                </p>
-              </Reveal>
+              <div
+                className="relative rounded-2xl p-10 md:p-12 overflow-hidden h-full"
+                style={{
+                  background:
+                    "linear-gradient(165deg, var(--ink) 0%, var(--ink-soft) 60%, #15372a 100%)",
+                }}
+              >
+                {/* grain + warm highlight for depth */}
+                <div
+                  aria-hidden
+                  className="absolute inset-0 pointer-events-none opacity-[0.10] mix-blend-overlay"
+                  style={{
+                    backgroundImage:
+                      "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
+                  }}
+                />
+                <div
+                  aria-hidden
+                  className="absolute inset-0 pointer-events-none"
+                  style={{
+                    background:
+                      "radial-gradient(70% 55% at 90% 0%, rgba(176,139,79,0.22) 0%, transparent 65%), radial-gradient(60% 60% at 0% 100%, rgba(197,204,182,0.15) 0%, transparent 70%)",
+                  }}
+                />
 
-              <div className="mt-10 space-y-6">
-                {[
-                  { l: "Studios", v: "Mumbai · Geneva · Singapore · Dubai" },
-                  { l: "Turnaround", v: "7 working days — briefs reviewed weekly" },
-                  { l: "Languages", v: "English · French · Mandarin · Hindi" },
-                ].map((m) => (
-                  <div
-                    key={m.l}
-                    className="pt-3"
-                    style={{ borderTop: "1px solid rgba(246,243,234,0.14)" }}
-                  >
-                    <div className="mono text-[10px] uppercase tracking-[0.22em] text-bg/50">
-                      {m.l}
+                <div className="relative">
+                  <Reveal>
+                    <div
+                      className="eyebrow"
+                      style={{ color: "#e8e2cf" }}
+                    >
+                      <span
+                        className="rule"
+                        style={{ background: "#e8e2cf", opacity: 0.85 }}
+                      />
+                      Brief Intake · 09
                     </div>
-                    <div className="mt-1 text-[14px] text-bg/90">{m.v}</div>
+                    <h3
+                      className="display mt-6 text-[clamp(32px,3.4vw,52px)] leading-[1]"
+                      style={{ color: "#f7f3e6", fontWeight: 500 }}
+                    >
+                      Send a brief.
+                      <br />
+                      <span className="italic text-gold">We&apos;ll listen first.</span>
+                    </h3>
+                    <p
+                      className="mt-6 text-[14.5px] leading-[1.8] max-w-[40ch]"
+                      style={{ color: "rgba(247,243,230,0.92)" }}
+                    >
+                      All submissions are handled under confidentiality. Our
+                      team will reply with a curated formulation path,
+                      projected timelines, and sampling options.
+                    </p>
+                  </Reveal>
+
+                  <div className="mt-10 space-y-6">
+                    {[
+                      { l: "Studios", v: "Mumbai · Geneva · Singapore · Dubai" },
+                      { l: "Turnaround", v: "7 working days — briefs reviewed weekly" },
+                      { l: "Languages", v: "English · French · Mandarin · Hindi" },
+                    ].map((m) => (
+                      <div
+                        key={m.l}
+                        className="pt-3"
+                        style={{ borderTop: "1px solid rgba(247,243,230,0.22)" }}
+                      >
+                        <div
+                          className="mono text-[10px] uppercase tracking-[0.22em]"
+                          style={{ color: "#c9c2a9" }}
+                        >
+                          {m.l}
+                        </div>
+                        <div
+                          className="mt-1 text-[14px]"
+                          style={{ color: "#f7f3e6" }}
+                        >
+                          {m.v}
+                        </div>
+                      </div>
+                    ))}
                   </div>
-                ))}
+                </div>
               </div>
             </div>
 
-            {/* Right: form */}
+            {/* Right: cream form card (original light treatment) */}
             <div className="col-span-12 lg:col-span-8">
               <Reveal delay={120}>
                 <form
                   onSubmit={onSubmit}
-                  className="grid grid-cols-12 gap-x-8 gap-y-10 rounded-2xl p-8 md:p-12"
-                  style={{
-                    background: "rgba(246,243,234,0.04)",
-                    border: "1px solid rgba(246,243,234,0.12)",
-                    backdropFilter: "blur(6px)",
-                  }}
+                  className="grid grid-cols-12 gap-x-8 gap-y-10 bg-bg-warm border border-line rounded-2xl p-8 md:p-12"
                 >
                   <Field
                     label="Full Name"
@@ -205,7 +225,7 @@ export default function Contact() {
 
                   {/* application — chip select */}
                   <div className="col-span-12">
-                    <label className="mono text-[10px] uppercase tracking-[0.22em] text-bg/55 block mb-4">
+                    <label className="mono text-[10px] uppercase tracking-[0.22em] text-moss block mb-4">
                       Application
                     </label>
                     <div className="flex flex-wrap gap-2">
@@ -216,8 +236,8 @@ export default function Contact() {
                           onClick={() => setSelectedApp(a)}
                           className={`px-4 py-2 rounded-full border text-[12px] transition-colors duration-300 ${
                             selectedApp === a
-                              ? "bg-bg text-ink border-bg"
-                              : "border-bg/25 text-bg/80 hover:border-bg/60 hover:text-bg"
+                              ? "bg-ink text-bg border-ink"
+                              : "border-line hover:border-ink/40"
                           }`}
                         >
                           {a}
@@ -231,7 +251,7 @@ export default function Contact() {
                   <div className="col-span-12">
                     <label
                       htmlFor="message"
-                      className="mono text-[10px] uppercase tracking-[0.22em] text-bg/55 block mb-3"
+                      className="mono text-[10px] uppercase tracking-[0.22em] text-moss block mb-3"
                     >
                       Project Brief
                     </label>
@@ -241,8 +261,7 @@ export default function Contact() {
                       required
                       rows={5}
                       placeholder="Vision, mood, references, regulatory environment, volumes…"
-                      className="w-full bg-transparent outline-none py-3 text-[14px] text-bg placeholder:text-bg/35 resize-none"
-                      style={{ borderBottom: "1px solid rgba(246,243,234,0.28)" }}
+                      className="w-full bg-transparent border-b border-line-strong focus:border-ink outline-none py-3 text-[14px] placeholder:text-ink/35 resize-none"
                     />
                   </div>
 
@@ -259,13 +278,10 @@ export default function Contact() {
                     className="col-span-12 md:col-span-6"
                   />
 
-                  <div
-                    className="col-span-12 flex flex-col md:flex-row md:items-center md:justify-between gap-6 pt-4"
-                    style={{ borderTop: "1px solid rgba(246,243,234,0.14)" }}
-                  >
-                    <div className="mono text-[11px] text-bg/55 uppercase tracking-[0.22em]">
+                  <div className="col-span-12 flex flex-col md:flex-row md:items-center md:justify-between gap-6 pt-4 border-t border-line">
+                    <div className="mono text-[11px] text-moss uppercase tracking-[0.22em]">
                       By submitting you accept our{" "}
-                      <a href="#" className="link-underline text-bg">
+                      <a href="#" className="link-underline text-ink">
                         confidentiality protocol
                       </a>
                       .
@@ -273,12 +289,7 @@ export default function Contact() {
                     <button
                       type="submit"
                       disabled={state !== "idle"}
-                      className="inline-flex items-center gap-2.5 rounded-full px-6 py-3.5 text-[13px] font-medium transition-all duration-500 disabled:opacity-60 disabled:cursor-wait hover:-translate-y-[1px]"
-                      style={{
-                        background: "var(--bg)",
-                        color: "var(--ink)",
-                        border: "1px solid var(--bg)",
-                      }}
+                      className="btn btn-primary disabled:opacity-60 disabled:cursor-wait"
                     >
                       {state === "idle" && (
                         <>
@@ -321,7 +332,7 @@ function Field({
     <div className={className}>
       <label
         htmlFor={id}
-        className="mono text-[10px] uppercase tracking-[0.22em] text-bg/55 block mb-3"
+        className="mono text-[10px] uppercase tracking-[0.22em] text-moss block mb-3"
       >
         {label}
         {required && <span className="text-gold ml-1">·</span>}
@@ -332,8 +343,7 @@ function Field({
         type={type}
         required={required}
         placeholder={placeholder}
-        className="w-full bg-transparent outline-none py-3 text-[14px] text-bg placeholder:text-bg/35 transition-colors focus:border-bg"
-        style={{ borderBottom: "1px solid rgba(246,243,234,0.28)" }}
+        className="w-full bg-transparent border-b border-line-strong focus:border-ink outline-none py-3 text-[14px] placeholder:text-ink/35 transition-colors"
       />
     </div>
   );
