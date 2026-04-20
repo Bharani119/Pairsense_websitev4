@@ -1,0 +1,340 @@
+"use client";
+import { useState } from "react";
+import Reveal from "@/components/ui/Reveal";
+import ParallaxImage from "@/components/ui/ParallaxImage";
+import { IMG } from "@/lib/images";
+
+const applications = [
+  "Fine Fragrance",
+  "Personal Care",
+  "Home Care",
+  "Beverages",
+  "Food & Snacks",
+  "Seasonings",
+  "Nutraceuticals",
+  "Tobacco / Shisha",
+  "Industrial",
+  "Other",
+];
+
+export default function Contact() {
+  const [state, setState] = useState<"idle" | "sending" | "sent">("idle");
+  const [selectedApp, setSelectedApp] = useState<string>("Fine Fragrance");
+
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setState("sending");
+    setTimeout(() => setState("sent"), 900);
+  };
+
+  return (
+    <section id="contact" className="section-border relative overflow-hidden">
+      {/* hero CTA band — cream identity preserved, parallax image breathes behind the wash */}
+      <div className="relative border-b border-line overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <ParallaxImage
+            src={IMG.contact.ctaBg}
+            alt=""
+            className="absolute inset-0"
+            overlay="none"
+            speed={0.35}
+            scale={1.25}
+            focal="50% 40%"
+          />
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(180deg, rgba(246,243,234,0.88) 0%, rgba(251,248,239,0.76) 35%, rgba(239,234,219,0.82) 70%, rgba(246,243,234,0.95) 100%)",
+            }}
+          />
+          <div
+            className="absolute inset-0 mix-blend-multiply opacity-60"
+            style={{
+              background:
+                "radial-gradient(100% 70% at 70% 40%, rgba(176,139,79,0.18) 0%, transparent 60%), radial-gradient(80% 60% at 10% 90%, rgba(15,46,34,0.16) 0%, transparent 70%)",
+            }}
+          />
+        </div>
+
+        <div className="container-wide py-28 md:py-44 relative">
+          <Reveal>
+            <div className="eyebrow">
+              <span className="rule" />
+              Commence · 08
+            </div>
+          </Reveal>
+          <Reveal delay={120}>
+            <h2 className="display mt-6 text-[clamp(48px,9vw,168px)] leading-[0.9]">
+              Let&apos;s engineer <br />
+              your <span className="italic text-gold">signature</span>.
+            </h2>
+          </Reveal>
+          <Reveal delay={240}>
+            <div className="mt-14 grid md:grid-cols-3 gap-10 items-end">
+              <div className="md:col-span-2">
+                <p className="text-[15px] leading-[1.8] text-ink/80 max-w-[52ch]">
+                  Briefs are read by a senior formulator within seven working
+                  days. Include your product vision, target market, and any
+                  regulatory environment — we&apos;ll respond with a formulation
+                  roadmap.
+                </p>
+              </div>
+              <div className="flex flex-col gap-2 md:items-end">
+                <div className="mono text-[10px] uppercase tracking-[0.22em] text-moss">
+                  Direct Line
+                </div>
+                <a
+                  href="mailto:hello@pairsense.com"
+                  className="display text-3xl link-underline"
+                >
+                  hello@pairsense.com
+                </a>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </div>
+
+      {/* form block — deep forest green, light text */}
+      <div
+        id="contact-form"
+        className="relative py-24 md:py-32"
+        style={{ background: "linear-gradient(180deg, var(--ink) 0%, var(--ink-soft) 100%)" }}
+      >
+        <div
+          aria-hidden
+          className="absolute inset-0 pointer-events-none opacity-[0.09] mix-blend-overlay"
+          style={{
+            backgroundImage:
+              "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
+          }}
+        />
+        <div
+          aria-hidden
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(60% 50% at 85% 10%, rgba(176,139,79,0.20) 0%, transparent 70%), radial-gradient(50% 55% at 5% 100%, rgba(197,204,182,0.18) 0%, transparent 70%)",
+          }}
+        />
+        <div className="container-wide relative">
+          <div className="grid grid-cols-12 gap-10">
+            {/* Left: meta */}
+            <div className="col-span-12 lg:col-span-4">
+              <Reveal>
+                <div className="eyebrow" style={{ color: "rgba(246,243,234,0.55)" }}>
+                  <span
+                    className="rule"
+                    style={{ background: "rgba(246,243,234,0.6)" }}
+                  />
+                  Brief Intake · 09
+                </div>
+                <h3 className="display mt-6 text-[clamp(32px,3.4vw,52px)] leading-[1] text-bg">
+                  Send a brief.
+                  <br />
+                  <span className="italic text-gold">We&apos;ll listen first.</span>
+                </h3>
+                <p className="mt-6 text-[14px] leading-[1.8] text-bg/70 max-w-[40ch]">
+                  All submissions are handled under confidentiality. Our team
+                  will reply with a curated formulation path, projected
+                  timelines, and sampling options.
+                </p>
+              </Reveal>
+
+              <div className="mt-10 space-y-6">
+                {[
+                  { l: "Studios", v: "Mumbai · Geneva · Singapore · Dubai" },
+                  { l: "Turnaround", v: "7 working days — briefs reviewed weekly" },
+                  { l: "Languages", v: "English · French · Mandarin · Hindi" },
+                ].map((m) => (
+                  <div
+                    key={m.l}
+                    className="pt-3"
+                    style={{ borderTop: "1px solid rgba(246,243,234,0.14)" }}
+                  >
+                    <div className="mono text-[10px] uppercase tracking-[0.22em] text-bg/50">
+                      {m.l}
+                    </div>
+                    <div className="mt-1 text-[14px] text-bg/90">{m.v}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right: form */}
+            <div className="col-span-12 lg:col-span-8">
+              <Reveal delay={120}>
+                <form
+                  onSubmit={onSubmit}
+                  className="grid grid-cols-12 gap-x-8 gap-y-10 rounded-2xl p-8 md:p-12"
+                  style={{
+                    background: "rgba(246,243,234,0.04)",
+                    border: "1px solid rgba(246,243,234,0.12)",
+                    backdropFilter: "blur(6px)",
+                  }}
+                >
+                  <Field
+                    label="Full Name"
+                    id="name"
+                    required
+                    placeholder="Priya Sharma"
+                    className="col-span-12 md:col-span-6"
+                  />
+                  <Field
+                    label="Work Email"
+                    id="email"
+                    type="email"
+                    required
+                    placeholder="priya@brand.com"
+                    className="col-span-12 md:col-span-6"
+                  />
+                  <Field
+                    label="Company"
+                    id="company"
+                    required
+                    placeholder="Brand, house, or atelier"
+                    className="col-span-12 md:col-span-6"
+                  />
+                  <Field
+                    label="Country / Market"
+                    id="market"
+                    placeholder="India · UAE · EU · Global"
+                    className="col-span-12 md:col-span-6"
+                  />
+
+                  {/* application — chip select */}
+                  <div className="col-span-12">
+                    <label className="mono text-[10px] uppercase tracking-[0.22em] text-bg/55 block mb-4">
+                      Application
+                    </label>
+                    <div className="flex flex-wrap gap-2">
+                      {applications.map((a) => (
+                        <button
+                          type="button"
+                          key={a}
+                          onClick={() => setSelectedApp(a)}
+                          className={`px-4 py-2 rounded-full border text-[12px] transition-colors duration-300 ${
+                            selectedApp === a
+                              ? "bg-bg text-ink border-bg"
+                              : "border-bg/25 text-bg/80 hover:border-bg/60 hover:text-bg"
+                          }`}
+                        >
+                          {a}
+                        </button>
+                      ))}
+                    </div>
+                    <input type="hidden" name="application" value={selectedApp} />
+                  </div>
+
+                  {/* message */}
+                  <div className="col-span-12">
+                    <label
+                      htmlFor="message"
+                      className="mono text-[10px] uppercase tracking-[0.22em] text-bg/55 block mb-3"
+                    >
+                      Project Brief
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      required
+                      rows={5}
+                      placeholder="Vision, mood, references, regulatory environment, volumes…"
+                      className="w-full bg-transparent outline-none py-3 text-[14px] text-bg placeholder:text-bg/35 resize-none"
+                      style={{ borderBottom: "1px solid rgba(246,243,234,0.28)" }}
+                    />
+                  </div>
+
+                  <Field
+                    label="Budget Range (optional)"
+                    id="budget"
+                    placeholder="— "
+                    className="col-span-12 md:col-span-6"
+                  />
+                  <Field
+                    label="Launch Window"
+                    id="window"
+                    placeholder="Q3 2026"
+                    className="col-span-12 md:col-span-6"
+                  />
+
+                  <div
+                    className="col-span-12 flex flex-col md:flex-row md:items-center md:justify-between gap-6 pt-4"
+                    style={{ borderTop: "1px solid rgba(246,243,234,0.14)" }}
+                  >
+                    <div className="mono text-[11px] text-bg/55 uppercase tracking-[0.22em]">
+                      By submitting you accept our{" "}
+                      <a href="#" className="link-underline text-bg">
+                        confidentiality protocol
+                      </a>
+                      .
+                    </div>
+                    <button
+                      type="submit"
+                      disabled={state !== "idle"}
+                      className="inline-flex items-center gap-2.5 rounded-full px-6 py-3.5 text-[13px] font-medium transition-all duration-500 disabled:opacity-60 disabled:cursor-wait hover:-translate-y-[1px]"
+                      style={{
+                        background: "var(--bg)",
+                        color: "var(--ink)",
+                        border: "1px solid var(--bg)",
+                      }}
+                    >
+                      {state === "idle" && (
+                        <>
+                          Submit brief
+                          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden>
+                            <path d="M1 6h10M7 2l4 4-4 4" stroke="currentColor" strokeWidth="1.2" />
+                          </svg>
+                        </>
+                      )}
+                      {state === "sending" && <>Transmitting…</>}
+                      {state === "sent" && <>Received. Thank you.</>}
+                    </button>
+                  </div>
+                </form>
+              </Reveal>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Field({
+  label,
+  id,
+  type = "text",
+  required = false,
+  placeholder,
+  className = "",
+}: {
+  label: string;
+  id: string;
+  type?: string;
+  required?: boolean;
+  placeholder?: string;
+  className?: string;
+}) {
+  return (
+    <div className={className}>
+      <label
+        htmlFor={id}
+        className="mono text-[10px] uppercase tracking-[0.22em] text-bg/55 block mb-3"
+      >
+        {label}
+        {required && <span className="text-gold ml-1">·</span>}
+      </label>
+      <input
+        id={id}
+        name={id}
+        type={type}
+        required={required}
+        placeholder={placeholder}
+        className="w-full bg-transparent outline-none py-3 text-[14px] text-bg placeholder:text-bg/35 transition-colors focus:border-bg"
+        style={{ borderBottom: "1px solid rgba(246,243,234,0.28)" }}
+      />
+    </div>
+  );
+}
