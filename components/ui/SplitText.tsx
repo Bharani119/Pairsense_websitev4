@@ -1,65 +1,78 @@
 "use client";
-import { useEffect, useRef } from "react";
 
-export default function SplitText({
-  text,
-  className = "",
-  delay = 0,
-  stagger = 60,
-}: {
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+
+interface SplitTextProps {
   text: string;
   className?: string;
-  delay?: number;
   stagger?: number;
-}) {
-  const ref = useRef<HTMLSpanElement>(null);
+  duration?: number;
+  delay?: number;
+  trigger?: boolean;
+}
+
+/**
+ * SplitText
+ * Custom GSAP-based character animation component for high-end cinematic typography.
+ * Supports character-level splitting and staggered entry animations.
+ */
+export default function SplitText({ 
+  text, 
+  className, 
+  stagger = 0.03, 
+  duration = 0.8,
+  delay = 0,
+  trigger = true
+}: SplitTextProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            el.classList.add("is-visible");
-            obs.disconnect();
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, []);
+    if (!containerRef.current || !trigger) return;
 
-  const words = text.split(" ");
-  return (
-    <span ref={ref} className={`split-text ${className}`}>
-      {words.map((w, i) => (
-        <span
-          key={i}
-          className="reveal-line"
-          style={{ marginRight: "0.3em", display: "inline-block" }}
-        >
-          <span
-            style={{
-              transitionDelay: `${delay + i * stagger}ms`,
-            }}
-          >
-            {w}
-          </span>
-        </span>
-      ))}
-      <style jsx>{`
-        .split-text :global(.reveal-line > span) {
-          transform: translateY(110%);
-          display: inline-block;
-          transition: transform 1.1s cubic-bezier(0.2, 0.85, 0.2, 1);
-        }
-        .split-text.is-visible :global(.reveal-line > span) {
-          transform: translateY(0);
-        }
-      `}</style>
+    const chars = containerRef.current.querySelectorAll(".char");
+    
+    // Initial state
+    gsap.set(chars, { 
+      opacity: 0, 
+      y: 20,
+      filter: "blur(10px)"
+    });
+
+    // Animation context for cleanup
+    const ctx = gsap.context(() => {
+      gsap.to(chars, {
+        opacity: 1,
+        y: 0,
+        filter: "blur(0px)",
+        duration: duration,
+        stagger: stagger,
+        delay: delay,
+        ease: "power3.out",
+        overwrite: "auto",
+      });
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, [text, stagger, duration, delay, trigger]);
+
+  // Split text into characters, preserving spaces
+  const characters = text.split("").map((char, index) => (
+    <span 
+      key={index} 
+      className="char inline-block whitespace-pre"
+    >
+      {char}
     </span>
+  ));
+
+  return (
+    <div 
+      ref={containerRef} 
+      className={`inline-block overflow-hidden pb-1 ${className}`}
+      aria-label={text}
+    >
+      {characters}
+    </div>
   );
 }
