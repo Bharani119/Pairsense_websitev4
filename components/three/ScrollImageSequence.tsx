@@ -12,6 +12,7 @@ interface ScrollImageSequenceProps {
   padding?: number;
   scrollFactor?: number;
   children?: ReactNode;
+  onProgress?: (progress: number) => void;
 }
 
 /**
@@ -27,6 +28,7 @@ export default function ScrollImageSequence({
   padding = 3,
   scrollFactor = 4,
   children,
+  onProgress,
 }: ScrollImageSequenceProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -162,8 +164,7 @@ export default function ScrollImageSequence({
       onUpdate: (self) => {
         const rawIndex = self.progress * (frameCount - 1);
         frameRef.current.index = rawIndex;
-        
-        // Use requestAnimationFrame for smooth drawing
+        onProgress?.(self.progress);
         requestAnimationFrame(() => {
           updateFrame(Math.round(rawIndex));
         });
