@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, useCallback } from "react";
+import { useEffect, useRef, useState, useCallback, ReactNode } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -11,6 +11,7 @@ interface ScrollImageSequenceProps {
   extension?: string;
   padding?: number;
   scrollFactor?: number;
+  children?: ReactNode;
 }
 
 /**
@@ -25,6 +26,7 @@ export default function ScrollImageSequence({
   extension = ".jpg",
   padding = 3,
   scrollFactor = 4,
+  children,
 }: ScrollImageSequenceProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -177,7 +179,7 @@ export default function ScrollImageSequence({
   return (
     <div
       ref={containerRef}
-      className="relative w-full overflow-hidden bg-black"
+      className="relative w-full overflow-hidden bg-[#fbf8ef]"
       style={{ height: "100vh" }}
     >
       <canvas
@@ -188,9 +190,19 @@ export default function ScrollImageSequence({
       
       {/* Subtle loader that fades out once the first frame is rendered */}
       {!hasRendered && (
-        <div className="absolute inset-0 flex items-center justify-center bg-black transition-opacity duration-500">
-          <div className="mono text-[10px] tracking-[0.3em] uppercase text-white animate-pulse">
+        <div className="absolute inset-0 flex items-center justify-center bg-[#fbf8ef] transition-opacity duration-500 z-20">
+          <div className="mono text-[10px] tracking-[0.3em] uppercase text-moss animate-pulse">
             Loading Sequence...
+          </div>
+        </div>
+      )}
+
+      {/* Overlay Children */}
+      {children && (
+        <div className="absolute inset-0 z-10 pointer-events-none">
+          {/* We use a nested div with pointer-events-auto so the overlay container doesn't block clicks to canvas if any, but children can still be clicked */}
+          <div className="w-full h-full pointer-events-auto">
+            {children}
           </div>
         </div>
       )}
