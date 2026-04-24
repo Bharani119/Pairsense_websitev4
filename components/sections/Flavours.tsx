@@ -54,12 +54,12 @@ export default function Flavours() {
 
   return (
     <ScrollImageSequence
-      frameCount={234}
-      baseUrl="/main-two"
-      prefix="ezgif-frame-"
-      padding={3}
+      frameCount={187}
+      baseUrl="/fragrance-animation"
+      prefix=""
+      padding={4}
       extension=".jpg"
-      scrollFactor={5}
+      scrollFactor={6}
       onProgress={handleProgress}
     >
       <div className="relative w-full h-full">
