@@ -1,4 +1,5 @@
 import Hero from "@/components/sections/Hero";
+import Flavours from "@/components/sections/Flavours";
 import InnovationLoop from "@/components/sections/InnovationLoop";
 import Process from "@/components/sections/Process";
 import WhoWeAre from "@/components/sections/WhoWeAre";
@@ -13,6 +14,7 @@ export default function Page() {
   return (
     <>
       <Hero />
+      <Flavours />
       <InnovationLoop />
       <Process />
       <WhoWeAre />
