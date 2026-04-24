@@ -8,6 +8,34 @@ const ScrollImageSequence = dynamic(
   { ssr: false }
 );
 
+const HERO_SEQUENCES = [
+  {
+    frameCount: 187,
+    baseUrl: "/fragrance-animation",
+    prefix: "",
+    padding: 4,
+    extension: ".jpg",
+  },
+  {
+    frameCount: 240,
+    baseUrl: "/flavour-animation",
+    prefix: "ezgif-frame-",
+    padding: 3,
+    extension: ".png",
+  },
+  {
+    frameCount: 240,
+    baseUrl: "/flavor-two-animation",
+    prefix: "ezgif-frame-",
+    padding: 3,
+    extension: ".jpg",
+  },
+] as const;
+
+const FRAGRANCE_PORTION =
+  HERO_SEQUENCES[0].frameCount /
+  HERO_SEQUENCES.reduce((sum, sequence) => sum + sequence.frameCount, 0);
+
 const MOLECULES = [
   {
     id: "citrus",
@@ -48,18 +76,17 @@ export default function Flavours() {
 
   const handleProgress = useCallback((progress: number) => {
     if (!overlayRef.current) return;
-    const opacity = Math.max(0, Math.min(1, (progress - 0.72) / 0.18));
+    const fadeIn = Math.max(0, Math.min(1, (progress - 0.08) / 0.12));
+    const fadeOutStart = FRAGRANCE_PORTION + 0.02;
+    const fadeOut = Math.max(0, Math.min(1, (fadeOutStart - progress) / 0.08));
+    const opacity = Math.min(fadeIn, fadeOut);
     overlayRef.current.style.opacity = String(opacity);
   }, []);
 
   return (
     <ScrollImageSequence
-      frameCount={187}
-      baseUrl="/fragrance-animation"
-      prefix=""
-      padding={4}
-      extension=".jpg"
-      scrollFactor={6}
+      sequences={[...HERO_SEQUENCES]}
+      scrollFactor={10}
       onProgress={handleProgress}
     >
       <div className="relative w-full h-full">
