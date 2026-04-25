@@ -41,9 +41,9 @@ export default function Hero() {
       </div>
 
       {/* main headline */}
-      <div className="relative z-10 container-wide h-full grid place-items-center">
-        <div className="-mt-16 max-w-[1400px] text-center">
-          <h1 className="display text-[clamp(56px,11vw,184px)]">
+      <div className="relative z-10 container-wide h-full grid place-items-center px-4 sm:px-6">
+        <div className="-mt-16 w-full max-w-[1400px] text-center">
+          <h1 className="display mx-auto max-w-[12ch] text-[clamp(44px,9vw,184px)] leading-[0.92]">
             <span className="block">
               <SplitText text="Engineering flavors." />
             </span>
