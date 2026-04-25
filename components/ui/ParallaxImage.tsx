@@ -51,13 +51,13 @@ export default function ParallaxImage({
 
   const overlayBg: Record<OverlayStyle, string> = {
     forest:
-      "linear-gradient(165deg, rgba(15,46,34,0.55) 0%, rgba(15,46,34,0.28) 45%, rgba(176,139,79,0.22) 100%)",
+      "linear-gradient(165deg, rgba(5,4,2,0.72) 0%, rgba(10,8,5,0.40) 45%, rgba(201,168,76,0.20) 100%)",
     cream:
-      "linear-gradient(165deg, rgba(246,243,234,0.35) 0%, rgba(197,204,182,0.25) 50%, rgba(15,46,34,0.35) 100%)",
+      "linear-gradient(165deg, rgba(10,8,5,0.55) 0%, rgba(15,12,7,0.35) 50%, rgba(201,168,76,0.25) 100%)",
     gold:
-      "linear-gradient(165deg, rgba(176,139,79,0.45) 0%, rgba(15,46,34,0.55) 100%)",
+      "linear-gradient(165deg, rgba(201,168,76,0.40) 0%, rgba(10,8,5,0.65) 100%)",
     duotone:
-      "linear-gradient(165deg, rgba(15,46,34,0.7) 0%, rgba(74,50,18,0.45) 100%)",
+      "linear-gradient(165deg, rgba(5,4,2,0.80) 0%, rgba(138,106,42,0.50) 100%)",
     none: "transparent",
   };
 
@@ -84,7 +84,7 @@ export default function ParallaxImage({
       {overlay !== "none" && (
         <>
           <div
-            className="absolute inset-0 pointer-events-none mix-blend-multiply"
+            className="absolute inset-0 pointer-events-none"
             style={{ background: overlayBg[overlay] }}
           />
           {/* subtle film grain on top of image */}

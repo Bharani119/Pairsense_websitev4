@@ -68,14 +68,14 @@ export default function InnovationLoop() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(180deg, rgba(246,243,234,0.92) 0%, rgba(246,243,234,0.72) 38%, rgba(246,243,234,0.88) 72%, var(--bg) 100%)",
+              "linear-gradient(180deg, rgba(10,8,5,0.82) 0%, rgba(10,8,5,0.55) 38%, rgba(10,8,5,0.78) 72%, var(--bg) 100%)",
           }}
         />
         <div
           className="absolute inset-0 mix-blend-multiply opacity-40"
           style={{
             background:
-              "radial-gradient(70% 60% at 50% 30%, rgba(15,46,34,0.18) 0%, transparent 70%)",
+              "radial-gradient(70% 60% at 50% 30%, rgba(201,168,76,0.10) 0%, transparent 70%)",
           }}
         />
       </div>
