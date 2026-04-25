@@ -3,24 +3,24 @@
 @tailwind utilities;
 
 :root {
-  --bg: #f6f3ea;
-  --bg-alt: #efeadb;
-  --bg-warm: #fbf8ef;
-  --ink: #0f2e22;
-  --ink-soft: #1e3a2d;
-  --moss: #6b7860;
-  --mist: #c5ccb6;
-  --earth: #4a3212;
-  --gold: #b08b4f;
-  --line: rgba(15, 46, 34, 0.12);
-  --line-strong: rgba(15, 46, 34, 0.24);
-  --grain-opacity: 0.06;
+  --bg: #0a0805;
+  --bg-alt: #100d08;
+  --bg-warm: #0f0c07;
+  --ink: #f0e6d0;
+  --ink-soft: #d9c9a8;
+  --moss: #c9a84c;
+  --mist: #6b5a38;
+  --earth: #8a6a2a;
+  --gold: #c9a84c;
+  --line: rgba(201, 168, 76, 0.14);
+  --line-strong: rgba(201, 168, 76, 0.28);
+  --grain-opacity: 0.045;
 
   /* variable-font axes */
   --fraunces-opsz-display: 144;
   --fraunces-opsz-body: 24;
 
-  color-scheme: light;
+  color-scheme: dark;
 }
 
 * {
@@ -63,7 +63,7 @@ body::before {
   inset: 0;
   pointer-events: none;
   z-index: 100;
-  mix-blend-mode: multiply;
+  mix-blend-mode: screen;
   opacity: var(--grain-opacity);
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
@@ -76,8 +76,8 @@ body::after {
   pointer-events: none;
   z-index: 1;
   background:
-    radial-gradient(60% 60% at 100% 0%, rgba(176, 139, 79, 0.06), transparent 60%),
-    radial-gradient(60% 60% at 0% 100%, rgba(107, 120, 96, 0.08), transparent 60%);
+    radial-gradient(60% 60% at 100% 0%, rgba(201, 168, 76, 0.08), transparent 60%),
+    radial-gradient(60% 60% at 0% 100%, rgba(201, 168, 76, 0.06), transparent 60%);
 }
 
 .display {
@@ -119,9 +119,9 @@ body::after {
 
 /* Glass effect used sparingly */
 .glass {
-  background: rgba(246, 243, 234, 0.55);
-  backdrop-filter: blur(18px) saturate(1.2);
-  -webkit-backdrop-filter: blur(18px) saturate(1.2);
+  background: rgba(10, 8, 5, 0.65);
+  backdrop-filter: blur(18px) saturate(1.4);
+  -webkit-backdrop-filter: blur(18px) saturate(1.4);
   border: 1px solid var(--line);
 }
 

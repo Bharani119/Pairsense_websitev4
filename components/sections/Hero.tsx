@@ -17,7 +17,7 @@ export default function Hero() {
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(80% 60% at 50% 20%, #fbf8ef 0%, #f6f3ea 40%, #efeadb 100%)",
+            "radial-gradient(80% 60% at 50% 20%, #141008 0%, #0a0805 45%, #060401 100%)",
         }}
       />
 
@@ -41,9 +41,9 @@ export default function Hero() {
       </div>
 
       {/* main headline */}
-      <div className="relative z-10 container-wide h-full grid place-items-center">
-        <div className="-mt-16 max-w-[1400px] text-center">
-          <h1 className="display text-[clamp(56px,11vw,184px)]">
+      <div className="relative z-10 container-wide h-full grid place-items-center px-4 sm:px-6">
+        <div className="-mt-16 w-full max-w-[1400px] text-center">
+          <h1 className="display mx-auto max-w-[12ch] text-[clamp(44px,9vw,184px)] leading-[0.92]">
             <span className="block">
               <SplitText text="Engineering flavors." />
             </span>

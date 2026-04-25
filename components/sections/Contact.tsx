@@ -45,14 +45,14 @@ export default function Contact() {
             className="absolute inset-0"
             style={{
               background:
-                "linear-gradient(180deg, rgba(246,243,234,0.88) 0%, rgba(251,248,239,0.76) 35%, rgba(239,234,219,0.82) 70%, rgba(246,243,234,0.95) 100%)",
+                "linear-gradient(180deg, rgba(10,8,5,0.75) 0%, rgba(10,8,5,0.55) 35%, rgba(10,8,5,0.65) 70%, rgba(10,8,5,0.85) 100%)",
             }}
           />
           <div
             className="absolute inset-0 mix-blend-multiply opacity-60"
             style={{
               background:
-                "radial-gradient(100% 70% at 70% 40%, rgba(176,139,79,0.18) 0%, transparent 60%), radial-gradient(80% 60% at 10% 90%, rgba(15,46,34,0.16) 0%, transparent 70%)",
+                "radial-gradient(100% 70% at 70% 40%, rgba(201,168,76,0.18) 0%, transparent 60%), radial-gradient(80% 60% at 10% 90%, rgba(201,168,76,0.10) 0%, transparent 70%)",
             }}
           />
         </div>
@@ -106,7 +106,7 @@ export default function Contact() {
                 className="relative rounded-2xl p-10 md:p-12 overflow-hidden h-full"
                 style={{
                   background:
-                    "linear-gradient(165deg, var(--ink) 0%, var(--ink-soft) 60%, #15372a 100%)",
+                    "linear-gradient(165deg, rgba(30,22,5,0.98) 0%, rgba(20,15,3,0.95) 60%, rgba(10,8,2,1) 100%)",
                 }}
               >
                 {/* grain + warm highlight for depth */}
@@ -123,7 +123,7 @@ export default function Contact() {
                   className="absolute inset-0 pointer-events-none"
                   style={{
                     background:
-                      "radial-gradient(70% 55% at 90% 0%, rgba(176,139,79,0.22) 0%, transparent 65%), radial-gradient(60% 60% at 0% 100%, rgba(197,204,182,0.15) 0%, transparent 70%)",
+                      "radial-gradient(70% 55% at 90% 0%, rgba(201,168,76,0.22) 0%, transparent 65%), radial-gradient(60% 60% at 0% 100%, rgba(201,168,76,0.10) 0%, transparent 70%)",
                   }}
                 />
 
