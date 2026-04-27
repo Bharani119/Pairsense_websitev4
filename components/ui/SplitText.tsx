@@ -69,7 +69,7 @@ export default function SplitText({
   return (
     <div 
       ref={containerRef} 
-      className={`inline-block overflow-hidden pb-1 ${className}`}
+      className={`inline-block overflow-visible ${className}`}
       aria-label={text}
     >
       {characters}

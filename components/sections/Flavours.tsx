@@ -131,7 +131,7 @@ export default function Flavours() {
         </div>
 
         {/* Sequence 02: Right */}
-        <div ref={block4Ref} className="absolute right-[8%] top-[55%] z-20 pointer-events-none text-right" style={{ opacity: 0 }}>
+        <div ref={block4Ref} className="absolute right-[8%] top-[25%] z-20 pointer-events-none text-right" style={{ opacity: 0 }}>
           <div className="h-px w-16 bg-white/40 mb-6 ml-auto" />
           <p className="mono mb-2 text-[11px] uppercase tracking-[0.4em] text-white/60">Phase 02</p>
           <h2 className="display text-[clamp(48px,6vw,90px)] leading-[0.9] text-white mb-8">Palate</h2>
@@ -147,37 +147,41 @@ export default function Flavours() {
           </div>
         </div>
 
-        {/* Sequence 03: Left */}
-        <div ref={block5Ref} className="absolute left-[8%] top-[25%] z-20 pointer-events-none" style={{ opacity: 0 }}>
-          <div className="h-px w-16 bg-white/40 mb-6" />
-          <p className="mono mb-2 text-[11px] uppercase tracking-[0.4em] text-white/60">Phase 03</p>
-          <h2 className="display text-[clamp(48px,6vw,90px)] leading-[0.9] text-white mb-8">Flavour</h2>
-          <div className="flex flex-col gap-5">
-             <div>
-                <p className="text-[10px] mono uppercase tracking-widest text-white/70 mb-1">Botanical Extracts</p>
-                <p className="text-[13px] text-white/50 leading-relaxed max-w-[240px]">Madagascar Vanilla, Wild Mint, and Lemongrass.</p>
-             </div>
-             <div>
-                <p className="text-[10px] mono uppercase tracking-widest text-white/70 mb-1">Fruit Essences</p>
-                <p className="text-[13px] text-white/50 leading-relaxed max-w-[240px]">Sicilian Lemon, Ripe Peach, and Wild Berries.</p>
-             </div>
+        {/* Sequence 03: Center Top */}
+        <div className="absolute left-0 right-0 top-[15%] z-20 pointer-events-none flex justify-center">
+          <div ref={block5Ref} className="text-center flex flex-col items-center w-full px-5" style={{ opacity: 0 }}>
+            <div className="h-px w-16 bg-white/40 mb-6" />
+            <p className="mono mb-2 text-[11px] uppercase tracking-[0.4em] text-white/60">Phase 03</p>
+            <h2 className="display text-[clamp(48px,6vw,90px)] leading-[0.9] text-white mb-6">Flavour</h2>
+            <div className="flex flex-col gap-4 items-center">
+               <div className="flex flex-col items-center text-center">
+                  <p className="text-[10px] mono uppercase tracking-widest text-white/70 mb-1">Botanical Extracts</p>
+                  <p className="text-[13px] text-white/50 leading-relaxed max-w-[340px]">Madagascar Vanilla, Wild Mint, and Lemongrass.</p>
+               </div>
+               <div className="flex flex-col items-center text-center">
+                  <p className="text-[10px] mono uppercase tracking-widest text-white/70 mb-1">Fruit Essences</p>
+                  <p className="text-[13px] text-white/50 leading-relaxed max-w-[340px]">Sicilian Lemon, Ripe Peach, and Wild Berries.</p>
+               </div>
+            </div>
           </div>
         </div>
 
-        {/* Sequence 03: Right */}
-        <div ref={block6Ref} className="absolute right-[8%] top-[55%] z-20 pointer-events-none text-right" style={{ opacity: 0 }}>
-          <div className="h-px w-16 bg-white/40 mb-6 ml-auto" />
-          <p className="mono mb-2 text-[11px] uppercase tracking-[0.4em] text-white/60">Phase 03</p>
-          <h2 className="display text-[clamp(48px,6vw,90px)] leading-[0.9] text-white mb-8">Identity</h2>
-          <div className="flex flex-col gap-5 items-end">
-             <div>
-                <p className="text-[10px] mono uppercase tracking-widest text-white/70 mb-1">Brand Signature</p>
-                <p className="text-[13px] text-white/50 leading-relaxed max-w-[240px]">A recognisable, repeatable sensory identity tailored to perfection.</p>
-             </div>
-             <div>
-                <p className="text-[10px] mono uppercase tracking-widest text-white/70 mb-1">Market Delivery</p>
-                <p className="text-[13px] text-white/50 leading-relaxed max-w-[240px]">Engineered for the world&apos;s most ambitious brands and discerning palates.</p>
-             </div>
+        {/* Sequence 03: Center Bottom */}
+        <div className="absolute left-0 right-0 top-[55%] z-20 pointer-events-none flex justify-center">
+          <div ref={block6Ref} className="text-center flex flex-col items-center w-full px-5" style={{ opacity: 0 }}>
+            <div className="h-px w-16 bg-white/40 mb-6" />
+            <p className="mono mb-2 text-[11px] uppercase tracking-[0.4em] text-white/60">Phase 03</p>
+            <h2 className="display text-[clamp(48px,6vw,90px)] leading-[0.9] text-white mb-6">Identity</h2>
+            <div className="flex flex-col gap-4 items-center">
+               <div className="flex flex-col items-center text-center">
+                  <p className="text-[10px] mono uppercase tracking-widest text-white/70 mb-1">Brand Signature</p>
+                  <p className="text-[13px] text-white/50 leading-relaxed max-w-[340px]">A recognisable, repeatable sensory identity tailored to perfection.</p>
+               </div>
+               <div className="flex flex-col items-center text-center">
+                  <p className="text-[10px] mono uppercase tracking-widest text-white/70 mb-1">Market Delivery</p>
+                  <p className="text-[13px] text-white/50 leading-relaxed max-w-[340px]">Engineered for the world&apos;s most ambitious brands and discerning palates.</p>
+               </div>
+            </div>
           </div>
         </div>
 
