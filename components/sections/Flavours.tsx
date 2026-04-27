@@ -21,7 +21,7 @@ const HERO_SEQUENCES = [
     baseUrl: "/flavour-animation",
     prefix: "ezgif-frame-",
     padding: 3,
-    extension: ".png",
+    extension: ".jpg",
   },
   {
     frameCount: 240,
