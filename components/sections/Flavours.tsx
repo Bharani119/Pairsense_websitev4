@@ -8,33 +8,14 @@ const ScrollImageSequence = dynamic(
   { ssr: false }
 );
 
-const HERO_SEQUENCES = [
-  {
-    frameCount: 187,
-    baseUrl: "/fragrance-animation",
-    prefix: "",
-    padding: 4,
-    extension: ".jpg",
-  },
-  {
-    frameCount: 240,
-    baseUrl: "/flavour-animation",
-    prefix: "ezgif-frame-",
-    padding: 3,
-    extension: ".jpg",
-  },
-  {
-    frameCount: 240,
-    baseUrl: "/flavor-two-animation",
-    prefix: "ezgif-frame-",
-    padding: 3,
-    extension: ".jpg",
-  },
-] as const;
+const HERO_VIDEOS = [
+  { src: "/fragrance.mp4",   portion: 187 / 667 },
+  { src: "/flavour.mp4",     portion: 240 / 667 },
+  { src: "/flavor-two.mp4",  portion: 240 / 667 },
+];
 
-const TOTAL_FRAMES = HERO_SEQUENCES.reduce((sum, sequence) => sum + sequence.frameCount, 0);
-const PORTION_1 = HERO_SEQUENCES[0].frameCount / TOTAL_FRAMES;
-const PORTION_2 = (HERO_SEQUENCES[0].frameCount + HERO_SEQUENCES[1].frameCount) / TOTAL_FRAMES;
+const PORTION_1 = 187 / 667;
+const PORTION_2 = (187 + 240) / 667;
 
 export default function Flavours() {
   const block1Ref = useRef<HTMLDivElement>(null);
@@ -74,7 +55,7 @@ export default function Flavours() {
 
   return (
     <ScrollImageSequence
-      sequences={[...HERO_SEQUENCES]}
+      videos={HERO_VIDEOS}
       scrollFactor={10}
       onProgress={handleProgress}
     >

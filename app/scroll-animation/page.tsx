@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 import { useRef } from "react";
 
 export default function ScrollAnimationPage() {
-  const TOTAL_FRAMES = 240;
   const sectionRef = useRef<HTMLElement>(null);
 
   const narrativeSections = [
@@ -64,10 +63,9 @@ export default function ScrollAnimationPage() {
 
       {/* Sequence Section */}
       <section ref={sectionRef} className="relative">
-        <ScrollImageSequence 
-          frameCount={TOTAL_FRAMES}
-          baseUrl="/ezgif-frames"
-          scrollFactor={5} // Scrolled height will be 500vh
+        <ScrollImageSequence
+          videos={[{ src: "/fragrance.mp4", portion: 1 }]}
+          scrollFactor={5}
         />
         
         <ScrollTextOverlay 

@@ -1,5 +1,8 @@
 "use client";
+import Image from "next/image";
 import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 type OverlayStyle = "forest" | "cream" | "gold" | "duotone" | "none";
 
@@ -11,6 +14,8 @@ export default function ParallaxImage({
   overlay = "forest",
   scale = 1.15,
   focal = "50% 50%",
+  sizes = "(max-width: 768px) 100vw, 50vw",
+  priority = false,
   children,
 }: {
   src: string;
@@ -20,33 +25,33 @@ export default function ParallaxImage({
   overlay?: OverlayStyle;
   scale?: number;
   focal?: string;
+  sizes?: string;
+  priority?: boolean;
   children?: React.ReactNode;
 }) {
   const wrap = useRef<HTMLDivElement>(null);
   const inner = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    let raf = 0;
-    let last = 0;
-    const tick = () => {
-      const el = wrap.current;
-      const layer = inner.current;
-      if (el && layer) {
-        const r = el.getBoundingClientRect();
-        const vh = window.innerHeight || 1;
-        const center = r.top + r.height / 2;
-        const prog = (vh / 2 - center) / vh; // -1 → below, 1 → above
-        const max = r.height * 0.18;
-        const y = Math.max(-max, Math.min(max, prog * r.height * speed));
-        if (Math.abs(y - last) > 0.1) {
-          layer.style.transform = `translate3d(0, ${y}px, 0) scale(${scale})`;
-          last = y;
-        }
-      }
-      raf = requestAnimationFrame(tick);
-    };
-    raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
+    const el = wrap.current;
+    const layer = inner.current;
+    if (!el || !layer) return;
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const st = ScrollTrigger.create({
+      trigger: el,
+      start: "top bottom",
+      end: "bottom top",
+      onUpdate: (self) => {
+        const prog = self.progress - 0.5; // -0.5 (entering bottom) → +0.5 (leaving top)
+        const max = el.offsetHeight * 0.18;
+        const y = Math.max(-max, Math.min(max, prog * el.offsetHeight * speed));
+        layer.style.transform = `translate3d(0, ${y}px, 0) scale(${scale})`;
+      },
+    });
+
+    return () => st.kill();
   }, [speed, scale]);
 
   const overlayBg: Record<OverlayStyle, string> = {
@@ -71,11 +76,14 @@ export default function ParallaxImage({
           transformOrigin: focal,
         }}
       >
-        <img
+        <Image
           src={src}
           alt={alt}
-          loading="lazy"
-          className="w-full h-full object-cover select-none pointer-events-none"
+          fill
+          sizes={sizes}
+          priority={priority}
+          loading={priority ? undefined : "eager"}
+          className="object-cover select-none pointer-events-none"
           style={{ objectPosition: focal }}
           draggable={false}
         />
@@ -87,7 +95,6 @@ export default function ParallaxImage({
             className="absolute inset-0 pointer-events-none"
             style={{ background: overlayBg[overlay] }}
           />
-          {/* subtle film grain on top of image */}
           <div
             className="absolute inset-0 pointer-events-none opacity-[0.12] mix-blend-overlay"
             style={{
