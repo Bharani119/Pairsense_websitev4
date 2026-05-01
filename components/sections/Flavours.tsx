@@ -49,7 +49,7 @@ export default function Flavours() {
     if (finalRef.current) {
       const fadeIn = Math.max(0, Math.min(1, (progress - 0.94) / 0.04));
       finalRef.current.style.opacity = String(fadeIn);
-      finalRef.current.style.transform = `translate(-50%, calc(-50% + ${40 - (progress - 0.94) * 200}px))`;
+      finalRef.current.style.transform = `translate(-50%, calc(-50% - 100px + ${40 - (progress - 0.94) * 200}px))`;
     }
   }, []);
 
