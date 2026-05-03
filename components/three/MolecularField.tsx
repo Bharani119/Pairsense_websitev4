@@ -56,22 +56,17 @@ function Particles() {
     };
   }, []);
 
-  useFrame((state, dt) => {
+  useFrame((state) => {
     const t = state.clock.elapsedTime;
     if (ref.current) {
+      // Pure GPU-side rotation
       ref.current.rotation.y = t * 0.05 + pointer.x * 0.25;
       ref.current.rotation.x = Math.sin(t * 0.15) * 0.06 + pointer.y * 0.15;
-      const arr = ref.current.geometry.attributes.position.array as Float32Array;
-      for (let i = 0; i < arr.length; i += 3) {
-        arr[i + 1] += Math.sin(t * 0.4 + arr[i] * 1.4) * 0.0004;
-      }
-      ref.current.geometry.attributes.position.needsUpdate = true;
     }
     if (linesRef.current) {
       linesRef.current.rotation.copy(ref.current!.rotation);
     }
     void viewport;
-    void dt;
   });
 
   return (
@@ -125,17 +120,66 @@ function Halo() {
   );
 }
 
+function GeometricStructures() {
+  const groupRef = useRef<THREE.Group>(null);
+  const mesh1 = useRef<THREE.Mesh>(null);
+  const mesh2 = useRef<THREE.Mesh>(null);
+  const mesh3 = useRef<THREE.Mesh>(null);
+
+  useFrame((state) => {
+    const t = state.clock.elapsedTime;
+    if (groupRef.current) {
+      groupRef.current.rotation.y = t * 0.1;
+      groupRef.current.rotation.x = t * 0.05;
+    }
+    if (mesh1.current) {
+      mesh1.current.rotation.x = t * 0.2;
+      mesh1.current.rotation.y = t * 0.3;
+    }
+    if (mesh2.current) {
+      mesh2.current.rotation.x = -t * 0.15;
+      mesh2.current.rotation.z = t * 0.25;
+    }
+    if (mesh3.current) {
+      mesh3.current.rotation.y = t * 0.1;
+      mesh3.current.rotation.z = -t * 0.1;
+    }
+  });
+
+  return (
+    <group ref={groupRef} position={[0, 0, -1]}>
+      {/* Inner Icosahedron */}
+      <mesh ref={mesh1}>
+        <icosahedronGeometry args={[2.5, 0]} />
+        <meshBasicMaterial color="#c9a84c" wireframe transparent opacity={0.15} />
+      </mesh>
+      {/* Mid Octahedron */}
+      <mesh ref={mesh2}>
+        <octahedronGeometry args={[3.8, 0]} />
+        <meshBasicMaterial color="#6b5a38" wireframe transparent opacity={0.1} />
+      </mesh>
+      {/* Outer abstract shape */}
+      <mesh ref={mesh3}>
+        <tetrahedronGeometry args={[4.5, 1]} />
+        <meshBasicMaterial color="#0f2e22" wireframe transparent opacity={0.2} />
+      </mesh>
+    </group>
+  );
+}
+
 export default function MolecularField() {
   return (
     <Canvas
-      dpr={[1, 2]}
-      gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
+      dpr={1}
+      gl={{ antialias: false, alpha: true, powerPreference: "high-performance" }}
       camera={{ position: [0, 0, 6], fov: 42 }}
+      frameloop="always"
       style={{ position: "absolute", inset: 0 }}
     >
       <ambientLight intensity={0.5} />
       <Particles />
       <Halo />
+      <GeometricStructures />
     </Canvas>
   );
 }

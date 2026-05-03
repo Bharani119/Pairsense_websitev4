@@ -47,7 +47,7 @@ export default function Capabilities() {
           <div className="col-span-12 md:col-span-5">
             <div className="eyebrow">
               <span className="rule" />
-              Core Capabilities · 05
+              Core Capabilities · 03
             </div>
             <Reveal>
               <h2 className="display mt-6 text-[clamp(40px,5vw,72px)]">

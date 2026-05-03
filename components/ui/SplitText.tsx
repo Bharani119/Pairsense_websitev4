@@ -32,11 +32,11 @@ export default function SplitText({
 
     const chars = containerRef.current.querySelectorAll(".char");
     
-    // Initial state
+    // Initial state — use transform+opacity only (compositor-thread safe, no per-char GPU layers)
     gsap.set(chars, { 
       opacity: 0, 
-      y: 20,
-      filter: "blur(10px)"
+      y: 18,
+      scale: 0.96,
     });
 
     // Animation context for cleanup
@@ -44,10 +44,10 @@ export default function SplitText({
       gsap.to(chars, {
         opacity: 1,
         y: 0,
-        filter: "blur(0px)",
+        scale: 1,
         duration: duration,
         stagger: stagger,
-        delay: delay,
+        delay: delay / 1000, // Convert milliseconds to seconds for GSAP
         ease: "power3.out",
         overwrite: "auto",
       });
@@ -56,11 +56,11 @@ export default function SplitText({
     return () => ctx.revert();
   }, [text, stagger, duration, delay, trigger]);
 
-  // Split text into characters, preserving spaces
   const characters = text.split("").map((char, index) => (
     <span 
       key={index} 
       className="char inline-block whitespace-pre"
+      style={{ willChange: "transform, opacity" }}
     >
       {char}
     </span>

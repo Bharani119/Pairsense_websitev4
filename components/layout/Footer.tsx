@@ -37,10 +37,10 @@ export default function Footer() {
               Practice
             </div>
             <ul className="space-y-2 text-[13px]">
-              <li><a href="#process" className="link-underline">Process</a></li>
               <li><a href="#capabilities" className="link-underline">Capabilities</a></li>
-              <li><a href="#segments" className="link-underline">Segments</a></li>
               <li><a href="#about" className="link-underline">About</a></li>
+              <li><a href="#segments" className="link-underline">Segments</a></li>
+              <li><a href="#process" className="link-underline">Process</a></li>
               <li><a href="#contact" className="link-underline">Contact</a></li>
             </ul>
           </div>
