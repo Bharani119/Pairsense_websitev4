@@ -35,7 +35,7 @@ export default function Contact() {
           <ParallaxImage
             src={IMG.contact.ctaBg}
             alt=""
-            className="absolute inset-0"
+            className="!absolute inset-0 w-full h-full"
             overlay="none"
             speed={0.35}
             scale={1.25}
@@ -45,11 +45,11 @@ export default function Contact() {
             className="absolute inset-0"
             style={{
               background:
-                "linear-gradient(180deg, rgba(10,8,5,0.75) 0%, rgba(10,8,5,0.55) 35%, rgba(10,8,5,0.65) 70%, rgba(10,8,5,0.85) 100%)",
+                "linear-gradient(180deg, rgba(10,8,5,0.7) 0%, rgba(10,8,5,0.4) 35%, rgba(10,8,5,0.5) 70%, rgba(10,8,5,0.8) 100%)",
             }}
           />
           <div
-            className="absolute inset-0 mix-blend-multiply opacity-60"
+            className="absolute inset-0 mix-blend-overlay opacity-60"
             style={{
               background:
                 "radial-gradient(100% 70% at 70% 40%, rgba(201,168,76,0.18) 0%, transparent 60%), radial-gradient(80% 60% at 10% 90%, rgba(201,168,76,0.10) 0%, transparent 70%)",

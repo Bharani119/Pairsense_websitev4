@@ -211,6 +211,17 @@ body::after {
   animation: marquee-x-reverse 40s linear infinite;
 }
 
+/* Scroll indicator animation */
+@keyframes scrollDown {
+  0% { transform: scaleY(0); transform-origin: top; }
+  50% { transform: scaleY(1); transform-origin: top; }
+  50.1% { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+.animate-scroll-down {
+  animation: scrollDown 2s cubic-bezier(0.7, 0, 0.3, 1) infinite;
+}
+
 /* Tilt card hover */
 .tilt-card {
   transform-style: preserve-3d;

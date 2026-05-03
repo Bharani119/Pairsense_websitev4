@@ -47,7 +47,7 @@ export default function Segments() {
           <div className="col-span-12 md:col-span-5">
             <div className="eyebrow">
               <span className="rule" />
-              Industry Segments · 06
+              Industry Segments · 05
             </div>
           </div>
           <div className="col-span-12 md:col-span-7">
@@ -74,7 +74,7 @@ export default function Segments() {
                     scale={1.18}
                   >
                     {/* content overlay */}
-                    <div className="absolute inset-0 flex flex-col justify-between p-7 md:p-8 text-bg">
+                    <div className="absolute inset-0 flex flex-col justify-between p-7 md:p-8 text-ink">
                       <div className="flex items-start justify-between">
                         <div className="display text-3xl md:text-4xl italic text-gold">
                           {s.n}
@@ -88,7 +88,7 @@ export default function Segments() {
                         <h3 className="display text-[clamp(24px,2.4vw,38px)] leading-[1] mb-3 transition-transform duration-700 group-hover:-translate-y-1">
                           {s.title}
                         </h3>
-                        <p className="text-[12.5px] leading-[1.7] max-w-[42ch] text-bg/85">
+                        <p className="text-[12.5px] leading-[1.7] max-w-[42ch] text-ink/85">
                           {s.body}
                         </p>
 
@@ -101,7 +101,7 @@ export default function Segments() {
                   </ParallaxImage>
 
                   {/* hover lift indicator corner */}
-                  <div className="absolute top-4 right-4 w-10 h-10 rounded-full border border-bg/40 grid place-items-center text-bg opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <div className="absolute top-4 right-4 w-10 h-10 rounded-full border border-ink/40 grid place-items-center text-ink opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     <svg width="14" height="14" viewBox="0 0 12 12" fill="none" aria-hidden>
                       <path d="M1 11L11 1M11 1H3M11 1v8" stroke="currentColor" strokeWidth="1.2" />
                     </svg>

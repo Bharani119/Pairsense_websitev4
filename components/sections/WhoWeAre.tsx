@@ -3,33 +3,33 @@ import Reveal from "@/components/ui/Reveal";
 
 export default function WhoWeAre() {
   return (
-    <section className="section section-border relative overflow-hidden">
-      {/* diagonal ornament grid */}
+    <section className="section section-border relative overflow-hidden bg-bg">
+      {/* Dynamic background image */}
+      <div 
+        className="absolute inset-0 z-0 bg-cover bg-center opacity-40 mix-blend-screen" 
+        style={{ backgroundImage: 'url(/manifesto_bg.png)' }} 
+      />
+      {/* diagonal ornament grid overlay */}
       <div
         aria-hidden
-        className="absolute inset-0 opacity-[0.08]"
+        className="absolute inset-0 opacity-[0.05] z-0"
         style={{
           backgroundImage:
             "linear-gradient(to right, var(--ink) 1px, transparent 1px)",
           backgroundSize: "120px 100%",
         }}
       />
-      <div className="container-wide relative">
+      <div className="container-wide relative z-10">
         <div className="grid grid-cols-12 gap-8">
-          <div className="col-span-12 md:col-span-4">
+          <div className="col-span-12 md:col-span-3">
             <div className="eyebrow">
               <span className="rule" />
-              Manifesto · 03
-            </div>
-            <div className="mt-8 mono text-[11px] text-ink/50 leading-[1.8] max-w-[28ch]">
-              Pairsense operates as a sensory atelier for category-leading
-              brands, engineering profiles that endure at industrial scale
-              without compromising on craft.
+              Manifesto · 06
             </div>
           </div>
-          <div className="col-span-12 md:col-span-8">
+          <div className="col-span-12 md:col-span-9 flex flex-col items-end text-right">
             <Reveal>
-              <h2 className="display text-[clamp(40px,6.6vw,112px)] leading-[0.94]">
+              <h2 className="display text-[clamp(40px,6.6vw,112px)] leading-[0.94] max-w-[900px]">
                 Defining new-gen{" "}
                 <span className="italic text-gold">taste</span> and{" "}
                 <span className="italic text-moss">scent</span> across the
@@ -38,14 +38,14 @@ export default function WhoWeAre() {
             </Reveal>
 
             <Reveal delay={200}>
-              <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-8">
+              <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-8 w-full max-w-[900px]">
                 {[
                   { n: "1200+", l: "Aroma molecules catalogued" },
                   { n: "48", l: "Markets served" },
                   { n: "18", l: "Sector verticals" },
                   { n: "0.01%", l: "Formulation tolerance" },
                 ].map((s) => (
-                  <div key={s.l} className="border-t border-line pt-5">
+                  <div key={s.l} className="border-t border-line pt-5 flex flex-col items-end text-right">
                     <div className="display text-[clamp(30px,3.2vw,48px)]">
                       {s.n}
                     </div>

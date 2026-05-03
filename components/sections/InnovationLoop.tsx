@@ -34,7 +34,7 @@ function Row({
       {items.map((w, i) => (
         <div key={i} className="flex items-center gap-16 shrink-0">
           <span
-            className={`display text-[clamp(56px,9vw,144px)] leading-none ${
+            className={`display text-[clamp(40px,5.5vw,96px)] leading-none ${
               variant === "outline"
                 ? "text-transparent [-webkit-text-stroke:1px_var(--ink)]"
                 : "text-ink"

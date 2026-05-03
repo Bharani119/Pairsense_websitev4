@@ -4,10 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 const items = [
-  { label: "Process", href: "#process" },
-  { label: "About", href: "#about" },
   { label: "Capabilities", href: "#capabilities" },
+  { label: "About", href: "#about" },
   { label: "Segments", href: "#segments" },
+  { label: "Process", href: "#process" },
 ];
 
 export default function Nav() {
@@ -52,7 +52,7 @@ export default function Nav() {
             aria-hidden
             className="hidden lg:inline-block mono text-[9.5px] uppercase tracking-[0.28em] text-moss"
           >
-            Sensory <br />Systems · Est. ’24
+            Sensory <br />Systems · Est. ’26
           </span>
         </Link>
 

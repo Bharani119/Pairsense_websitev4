@@ -8,8 +8,8 @@ export default function About() {
     <section id="about" className="section section-border">
       <div className="container-wide">
         <div className="grid grid-cols-12 gap-10 items-stretch">
-          {/* Left: parallax image with technical overlay */}
-          <div className="col-span-12 lg:col-span-5">
+          {/* Image (Moved to right on desktop) */}
+          <div className="col-span-12 lg:col-span-5 lg:order-last">
             <ParallaxImage
               src={IMG.about}
               alt="Ink blooming through water — a study in diffusion."
@@ -44,8 +44,8 @@ export default function About() {
             </ParallaxImage>
           </div>
 
-          {/* Right: content */}
-          <div className="col-span-12 lg:col-span-7 lg:pl-8">
+          {/* Content (Moved to left on desktop) */}
+          <div className="col-span-12 lg:col-span-7 lg:pr-8 lg:order-first">
             <div className="eyebrow">
               <span className="rule" />
               About · 04
