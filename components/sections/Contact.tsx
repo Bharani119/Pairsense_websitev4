@@ -21,10 +21,16 @@ export default function Contact() {
   const [state, setState] = useState<"idle" | "sending" | "sent">("idle");
   const [selectedApp, setSelectedApp] = useState<string>("Fine Fragrance");
 
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setState("sending");
-    setTimeout(() => setState("sent"), 900);
+    const data = new FormData(e.currentTarget);
+    try {
+      const res = await fetch("/api/contact", { method: "POST", body: data });
+      setState(res.ok ? "sent" : "idle");
+    } catch {
+      setState("idle");
+    }
   };
 
   return (
