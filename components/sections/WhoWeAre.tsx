@@ -41,7 +41,7 @@ export default function WhoWeAre() {
               <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-8 w-full max-w-[900px]">
                 {[
                   { n: "1200+", l: "Aroma molecules catalogued" },
-                  { n: "48", l: "Markets served" },
+                  { n: "48", l: "Markets sourced" },
                   { n: "18", l: "Sector verticals" },
                   { n: "0.01%", l: "Formulation tolerance" },
                 ].map((s) => (

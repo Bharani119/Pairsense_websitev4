@@ -41,7 +41,7 @@ export default function Nav() {
             height={88}
             priority
             className={`w-auto object-contain transition-all duration-500 ${
-              scrolled ? "h-10 md:h-11" : "h-12 md:h-14"
+              scrolled ? "h-12 md:h-14" : "h-16 md:h-20"
             }`}
           />
           <span

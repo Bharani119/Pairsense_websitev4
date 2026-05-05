@@ -85,10 +85,10 @@ export default function Contact() {
                   Direct Line
                 </div>
                 <a
-                  href="mailto:hello@pairsense.com"
+                  href="mailto:reach@pairsense.co"
                   className="display text-3xl link-underline"
                 >
-                  hello@pairsense.com
+                  reach@pairsense.co
                 </a>
               </div>
             </div>
@@ -159,7 +159,6 @@ export default function Contact() {
 
                   <div className="mt-10 space-y-6">
                     {[
-                      { l: "Studios", v: "Mumbai · Geneva · Singapore · Dubai" },
                       { l: "Turnaround", v: "7 working days — briefs reviewed weekly" },
                       { l: "Languages", v: "English · French · Mandarin · Hindi" },
                     ].map((m) => (
@@ -198,7 +197,7 @@ export default function Contact() {
                     label="Full Name"
                     id="name"
                     required
-                    placeholder="Priya Sharma"
+                    placeholder="Your full name"
                     className="col-span-12 md:col-span-6"
                   />
                   <Field
@@ -206,7 +205,7 @@ export default function Contact() {
                     id="email"
                     type="email"
                     required
-                    placeholder="priya@brand.com"
+                    placeholder="your@company.com"
                     className="col-span-12 md:col-span-6"
                   />
                   <Field

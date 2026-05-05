@@ -12,6 +12,7 @@ const items = [
     image: IMG.process.sourcing,
     alt: "Botanical ingredients laid against a muted neutral ground.",
     tag: "Raw Matter · Curation",
+    focal: "50% 20%",
   },
   {
     n: "02",
@@ -20,6 +21,7 @@ const items = [
     image: IMG.process.formulation,
     alt: "Laboratory glassware holding amber liquid in soft studio light.",
     tag: "Molecular · Engineering",
+    focal: "50% 50%",
   },
   {
     n: "03",
@@ -28,6 +30,7 @@ const items = [
     image: IMG.process.validation,
     alt: "Ink dispersing in water, slow diffusion caught mid-bloom.",
     tag: "Performance · Index",
+    focal: "50% 50%",
   },
 ];
 
@@ -64,6 +67,7 @@ export default function Process() {
                     overlay="forest"
                     speed={0.35}
                     scale={1.18}
+                    focal={it.focal}
                   >
                     {/* overlay chrome on image */}
                     <div className="absolute inset-0 flex flex-col justify-between p-7 text-bg">
