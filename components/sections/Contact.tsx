@@ -294,7 +294,7 @@ export default function Contact() {
                     <button
                       type="submit"
                       disabled={state !== "idle"}
-                      className="btn btn-primary disabled:opacity-60 disabled:cursor-wait"
+                      className={`btn btn-primary disabled:opacity-60 ${state === "sending" ? "cursor-wait" : "cursor-default"}`}
                     >
                       {state === "idle" && (
                         <>
