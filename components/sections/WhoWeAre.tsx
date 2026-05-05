@@ -6,8 +6,8 @@ export default function WhoWeAre() {
     <section className="section section-border relative overflow-hidden bg-bg">
       {/* Dynamic background image */}
       <div 
-        className="absolute inset-0 z-0 bg-cover bg-center opacity-40 mix-blend-screen" 
-        style={{ backgroundImage: 'url(/manifesto_bg.png)' }} 
+        className="absolute inset-0 z-0 bg-cover bg-center opacity-25 mix-blend-screen" 
+        style={{ backgroundImage: 'url(/manifesto_bg_taste_scent_v3.png)' }} 
       />
       {/* diagonal ornament grid overlay */}
       <div
@@ -40,7 +40,7 @@ export default function WhoWeAre() {
             <Reveal delay={200}>
               <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-8 w-full max-w-[900px]">
                 {[
-                  { n: "1200+", l: "Aroma molecules catalogued" },
+                  { n: "1200+", l: "Aroma & flavour profiles" },
                   { n: "48", l: "Markets served" },
                   { n: "18", l: "Sector verticals" },
                   { n: "0.01%", l: "Formulation tolerance" },

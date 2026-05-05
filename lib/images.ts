@@ -22,7 +22,7 @@ export const IMG = {
     sectors: "/cap_sectors.png",
   },
   segments: {
-    fine: "/seg_fine.png",
+    fine: "/seg_fine_group.png",
     food: U("photo-1504674900247-0877df9cc836"),          // food flat lay
     seasoning: U("photo-1596040033229-a9821ebd058d"),     // spices
     beverage: U("photo-1514362545857-3bc16c4c7d1b"),      // cocktail / beverage

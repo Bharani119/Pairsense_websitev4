@@ -11,7 +11,7 @@ const segments = [
     body: "Fine fragrances designed for depth, character, and long-lasting performance across premium applications.",
     tag: "Couture",
     image: IMG.segments.fine,
-    alt: "Amber perfume bottle in soft cinematic light.",
+    alt: "A group of elegant fine fragrance bottles in soft cinematic light.",
   },
   {
     n: "II",
