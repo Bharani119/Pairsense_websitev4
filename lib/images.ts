@@ -18,8 +18,8 @@ export const IMG = {
   capabilities: {
     concept: "/cap_concept.png",
     ingredients: "/cap_ingredients.png",
-    application: "/cap_application.png",
-    sectors: "/cap_sectors.png",
+    application: "/cap_application_puzzle.png",
+    sectors: "/cap_sectors_industrial.png",
   },
   segments: {
     fine: "/seg_fine_group.png",
