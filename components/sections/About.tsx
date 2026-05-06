@@ -54,7 +54,7 @@ export default function About() {
             <Reveal>
               <h2 className="display mt-6 text-[clamp(40px,5.4vw,84px)] leading-[0.95]">
                 Shaping the future of{" "}
-                <span className="italic">flavor</span> and{" "}
+                <span className="italic text-gold">flavor</span> and{" "}
                 <span className="italic text-gold">fragrance</span>.
               </h2>
             </Reveal>
@@ -84,7 +84,7 @@ export default function About() {
 
             <Reveal delay={320}>
               <div className="mt-12 flex items-center gap-6 border-t border-line pt-8">
-                <a href="#contact" className="btn btn-primary">
+                <a href="#contact-form" className="btn btn-primary">
                   Begin a partnership
                 </a>
                 <a

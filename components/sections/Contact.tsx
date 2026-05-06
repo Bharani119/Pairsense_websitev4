@@ -166,7 +166,6 @@ export default function Contact() {
                   <div className="mt-10 space-y-6">
                     {[
                       { l: "Turnaround", v: "7 working days — briefs reviewed weekly" },
-                      { l: "Languages", v: "English · French · Mandarin · Hindi" },
                     ].map((m) => (
                       <div
                         key={m.l}
@@ -197,7 +196,8 @@ export default function Contact() {
               <Reveal delay={120}>
                 <form
                   onSubmit={onSubmit}
-                  className="grid grid-cols-12 gap-x-8 gap-y-10 bg-bg-warm border border-line rounded-2xl p-8 md:p-12"
+                  className="grid grid-cols-12 gap-x-8 gap-y-10 border border-line rounded-2xl p-8 md:p-12"
+                  style={{ background: "#1e1a0f" }}
                 >
                   <Field
                     label="Full Name"
