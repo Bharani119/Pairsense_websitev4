@@ -171,7 +171,7 @@ export default function MolecularField() {
   return (
     <Canvas
       dpr={1}
-      gl={{ antialias: false, alpha: true, powerPreference: "high-performance" }}
+      gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
       camera={{ position: [0, 0, 6], fov: 42 }}
       frameloop="always"
       style={{ position: "absolute", inset: 0 }}
