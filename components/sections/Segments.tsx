@@ -71,7 +71,7 @@ export default function Segments() {
                     className="aspect-[4/3] w-full"
                     overlay="forest"
                     speed={0.35}
-                    scale={1.18}
+                    scale={1.4}
                   >
                     {/* content overlay */}
                     <div className="absolute inset-0 flex flex-col justify-between p-7 md:p-8 text-ink">
@@ -99,13 +99,6 @@ export default function Segments() {
                       </div>
                     </div>
                   </ParallaxImage>
-
-                  {/* hover lift indicator corner */}
-                  <div className="absolute top-4 right-4 w-10 h-10 rounded-full border border-ink/40 grid place-items-center text-ink opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <svg width="14" height="14" viewBox="0 0 12 12" fill="none" aria-hidden>
-                      <path d="M1 11L11 1M11 1H3M11 1v8" stroke="currentColor" strokeWidth="1.2" />
-                    </svg>
-                  </div>
                 </article>
               </TiltCard>
             </Reveal>

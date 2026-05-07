@@ -21,10 +21,16 @@ export default function Contact() {
   const [state, setState] = useState<"idle" | "sending" | "sent">("idle");
   const [selectedApp, setSelectedApp] = useState<string>("Fine Fragrance");
 
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setState("sending");
-    setTimeout(() => setState("sent"), 900);
+    const data = new FormData(e.currentTarget);
+    try {
+      const res = await fetch("/api/contact", { method: "POST", body: data });
+      setState(res.ok ? "sent" : "idle");
+    } catch {
+      setState("idle");
+    }
   };
 
   return (
@@ -38,7 +44,7 @@ export default function Contact() {
             className="!absolute inset-0 w-full h-full"
             overlay="none"
             speed={0.35}
-            scale={1.25}
+            scale={1.4}
             focal="50% 40%"
           />
           <div
@@ -85,10 +91,10 @@ export default function Contact() {
                   Direct Line
                 </div>
                 <a
-                  href="mailto:hello@pairsense.com"
+                  href="mailto:reach@pairsense.co"
                   className="display text-3xl link-underline"
                 >
-                  hello@pairsense.com
+                  reach@pairsense.co
                 </a>
               </div>
             </div>
@@ -109,15 +115,6 @@ export default function Contact() {
                     "linear-gradient(165deg, rgba(30,22,5,0.98) 0%, rgba(20,15,3,0.95) 60%, rgba(10,8,2,1) 100%)",
                 }}
               >
-                {/* grain + warm highlight for depth */}
-                <div
-                  aria-hidden
-                  className="absolute inset-0 pointer-events-none opacity-[0.10] mix-blend-overlay"
-                  style={{
-                    backgroundImage:
-                      "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
-                  }}
-                />
                 <div
                   aria-hidden
                   className="absolute inset-0 pointer-events-none"
@@ -159,9 +156,7 @@ export default function Contact() {
 
                   <div className="mt-10 space-y-6">
                     {[
-                      { l: "Studios", v: "Mumbai · Geneva · Singapore · Dubai" },
                       { l: "Turnaround", v: "7 working days — briefs reviewed weekly" },
-                      { l: "Languages", v: "English · French · Mandarin · Hindi" },
                     ].map((m) => (
                       <div
                         key={m.l}
@@ -192,13 +187,14 @@ export default function Contact() {
               <Reveal delay={120}>
                 <form
                   onSubmit={onSubmit}
-                  className="grid grid-cols-12 gap-x-8 gap-y-10 bg-bg-warm border border-line rounded-2xl p-8 md:p-12"
+                  className="grid grid-cols-12 gap-x-8 gap-y-10 border border-line rounded-2xl p-8 md:p-12"
+                  style={{ background: "#1e1a0f" }}
                 >
                   <Field
                     label="Full Name"
                     id="name"
                     required
-                    placeholder="Priya Sharma"
+                    placeholder="Your full name"
                     className="col-span-12 md:col-span-6"
                   />
                   <Field
@@ -206,7 +202,7 @@ export default function Contact() {
                     id="email"
                     type="email"
                     required
-                    placeholder="priya@brand.com"
+                    placeholder="your@company.com"
                     className="col-span-12 md:col-span-6"
                   />
                   <Field
@@ -289,7 +285,7 @@ export default function Contact() {
                     <button
                       type="submit"
                       disabled={state !== "idle"}
-                      className="btn btn-primary disabled:opacity-60 disabled:cursor-wait"
+                      className={`btn btn-primary disabled:opacity-60 ${state === "sending" ? "cursor-wait" : "cursor-default"}`}
                     >
                       {state === "idle" && (
                         <>

@@ -22,13 +22,13 @@ export default function Footer() {
 
           <div className="col-span-6 md:col-span-2">
             <div className="mono text-[10px] uppercase tracking-[0.22em] text-moss mb-5">
-              Studios
+              Connect
             </div>
             <ul className="space-y-2 text-[13px]">
-              <li>Mumbai</li>
-              <li>Geneva</li>
-              <li>Singapore</li>
-              <li>Dubai</li>
+              <li><a href="https://www.instagram.com/pairsense?igsh=eG10MWx1bWxra3l5&utm_source=qr" className="link-underline" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+              <li><a href="https://www.linkedin.com/in/sachinpairsense" className="link-underline" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+              <li><a href="https://x.com/pairsensex?s=21&t=MvjSov5NKGuHZPEQXU6ylA" className="link-underline" target="_blank" rel="noopener noreferrer">X / Twitter</a></li>
+              <li><a href="https://www.facebook.com/share/1AhYd6ea5a/?mibextid=wwXIfr" className="link-underline" target="_blank" rel="noopener noreferrer">Facebook</a></li>
             </ul>
           </div>
 
@@ -69,7 +69,7 @@ export default function Footer() {
             © {new Date().getFullYear()} Pairsense · All rights reserved
           </div>
           <div className="mono text-[10px] uppercase tracking-[0.22em] text-moss">
-            Crafted with precision · No artificial flavoring of the truth
+            Crafted with precision
           </div>
         </div>
       </div>

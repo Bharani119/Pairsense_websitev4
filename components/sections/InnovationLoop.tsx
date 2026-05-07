@@ -1,5 +1,6 @@
 "use client";
 import Marquee from "@/components/ui/Marquee";
+import Reveal from "@/components/ui/Reveal";
 import ParallaxImage from "@/components/ui/ParallaxImage";
 import { IMG } from "@/lib/images";
 
@@ -60,7 +61,7 @@ export default function InnovationLoop() {
           className="absolute inset-0"
           overlay="none"
           speed={0.3}
-          scale={1.2}
+          scale={1.35}
           focal="50% 35%"
         />
         {/* soft dual-gradient: readable ink text up top, clean fade into the page */}
@@ -86,13 +87,17 @@ export default function InnovationLoop() {
             <span className="rule" />
             Operating Principles
           </div>
-          <h2 className="display mt-6 text-[clamp(40px,5vw,72px)] max-w-[720px]">
-            Five disciplines, <span className="italic text-gold">held in tension</span>.
-          </h2>
+          <Reveal>
+            <h2 className="display mt-6 text-[clamp(40px,5vw,72px)] max-w-[720px]">
+              Five disciplines, <span className="italic text-gold">held in tension</span>.
+            </h2>
+          </Reveal>
         </div>
-        <div className="mono text-[11px] uppercase tracking-[0.22em] text-moss hidden md:block">
-          §02 · Doctrine
-        </div>
+        <Reveal delay={120}>
+          <div className="mono text-[11px] uppercase tracking-[0.22em] text-moss hidden md:block">
+            §02 · Doctrine
+          </div>
+        </Reveal>
       </div>
 
       <div className="relative flex flex-col gap-2 py-6 border-y border-line bg-bg-warm/60 backdrop-blur-sm">

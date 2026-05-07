@@ -15,8 +15,8 @@ export default function About() {
               alt="Ink blooming through water — a study in diffusion."
               className="aspect-[4/5] w-full rounded-2xl border border-line"
               overlay="forest"
-              speed={0.5}
-              scale={1.2}
+              speed={0.35}
+              scale={1.4}
             >
               <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-6 left-6 right-6 flex justify-between mono text-[10px] uppercase tracking-[0.22em] text-bg">
@@ -54,7 +54,7 @@ export default function About() {
             <Reveal>
               <h2 className="display mt-6 text-[clamp(40px,5.4vw,84px)] leading-[0.95]">
                 Shaping the future of{" "}
-                <span className="italic">flavor</span> and{" "}
+                <span className="italic text-gold">flavor</span> and{" "}
                 <span className="italic text-gold">fragrance</span>.
               </h2>
             </Reveal>
@@ -84,7 +84,7 @@ export default function About() {
 
             <Reveal delay={320}>
               <div className="mt-12 flex items-center gap-6 border-t border-line pt-8">
-                <a href="#contact" className="btn btn-primary">
+                <a href="#contact-form" className="btn btn-primary">
                   Begin a partnership
                 </a>
                 <a

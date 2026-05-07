@@ -12,7 +12,7 @@ export default function ParallaxImage({
   className = "",
   speed = 0.25,
   overlay = "forest",
-  scale = 1.15,
+  scale = 1.25,
   focal = "50% 50%",
   sizes = "(max-width: 768px) 100vw, 50vw",
   priority = false,
@@ -44,9 +44,10 @@ export default function ParallaxImage({
       start: "top bottom",
       end: "bottom top",
       onUpdate: (self) => {
-        const prog = self.progress - 0.5; // -0.5 (entering bottom) → +0.5 (leaving top)
-        const max = el.offsetHeight * 0.18;
-        const y = Math.max(-max, Math.min(max, prog * el.offsetHeight * speed));
+        const prog = self.progress - 0.5;
+        // Limit displacement based on scale to avoid revealing background
+        const limit = (scale - 1) * 0.5 * el.offsetHeight;
+        const y = Math.max(-limit, Math.min(limit, prog * el.offsetHeight * speed));
         layer.style.transform = `translate3d(0, ${y}px, 0) scale(${scale})`;
       },
     });
@@ -90,19 +91,10 @@ export default function ParallaxImage({
       </div>
 
       {overlay !== "none" && (
-        <>
-          <div
-            className="absolute inset-0 pointer-events-none"
-            style={{ background: overlayBg[overlay] }}
-          />
-          <div
-            className="absolute inset-0 pointer-events-none opacity-[0.12] mix-blend-overlay"
-            style={{
-              backgroundImage:
-                "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
-            }}
-          />
-        </>
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{ background: overlayBg[overlay] }}
+        />
       )}
 
       {children}

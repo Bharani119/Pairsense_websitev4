@@ -1,5 +1,6 @@
 "use client";
 import Marquee from "@/components/ui/Marquee";
+import Reveal from "@/components/ui/Reveal";
 
 const categories = [
   "Fine Fragrance",
@@ -37,9 +38,11 @@ export default function CategoryStrip() {
             <span className="rule" style={{ background: "var(--gold)" }} />
             Global Reach · 07
           </div>
-          <h3 className="display text-[clamp(32px,3.4vw,56px)] mt-4 max-w-[800px]">
-            Sixteen categories. One disciplined <em className="text-gold not-italic">house</em>.
-          </h3>
+          <Reveal>
+            <h3 className="display text-[clamp(32px,3.4vw,56px)] mt-4 max-w-[800px]">
+              Sixteen categories. One disciplined <em className="text-gold not-italic">house</em>.
+            </h3>
+          </Reveal>
         </div>
         <div className="mono text-[10px] uppercase tracking-[0.22em] text-gold/60 hidden md:block">
           continuous index ·

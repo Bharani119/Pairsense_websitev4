@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     type: "website",
   },
   icons: {
-    icon: "/pairsense-logo.png",
+    icon: "/pairsense-logowithouttext.PNG",
   },
 };
 

@@ -77,7 +77,7 @@ export default function Capabilities() {
                     className="aspect-[16/10] w-full"
                     overlay="forest"
                     speed={0.3}
-                    scale={1.15}
+                    scale={1.35}
                   >
                     <div className="absolute inset-0 flex flex-col justify-between p-8 text-bg">
                       <div className="flex items-start justify-between">
