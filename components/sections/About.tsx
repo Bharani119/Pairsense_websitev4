@@ -15,20 +15,20 @@ export default function About() {
               alt="Ink blooming through water — a study in diffusion."
               className="aspect-[4/5] w-full rounded-2xl border border-line"
               overlay="forest"
-              speed={0.5}
-              scale={1.2}
+              speed={0.35}
+              scale={1.6}
             >
               <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute top-6 left-6 right-6 flex justify-between mono text-[10px] uppercase tracking-[0.22em] text-bg">
+                <div className="absolute top-6 left-6 right-6 flex justify-between mono text-[10px] uppercase tracking-[0.22em] text-ink/80">
                   <span>Specimen · PS-4121</span>
                   <span>Diffusion field</span>
                 </div>
-                <div className="absolute bottom-6 left-6 right-6 flex justify-between mono text-[10px] uppercase tracking-[0.22em] text-bg">
+                <div className="absolute bottom-6 left-6 right-6 flex justify-between mono text-[10px] uppercase tracking-[0.22em] text-ink/60">
                   <span>λ 410 · 620 nm</span>
                   <span>Index 1.428</span>
                 </div>
                 <svg
-                  className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-bg/80"
+                  className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-ink/20"
                   width="180"
                   height="180"
                   viewBox="0 0 180 180"

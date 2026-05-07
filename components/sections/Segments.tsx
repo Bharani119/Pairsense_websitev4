@@ -71,7 +71,7 @@ export default function Segments() {
                     className="aspect-[4/3] w-full"
                     overlay="forest"
                     speed={0.35}
-                    scale={1.18}
+                    scale={1.5}
                   >
                     {/* content overlay */}
                     <div className="absolute inset-0 flex flex-col justify-between p-7 md:p-8 text-ink">
@@ -79,7 +79,7 @@ export default function Segments() {
                         <div className="display text-3xl md:text-4xl italic text-gold">
                           {s.n}
                         </div>
-                        <div className="mono text-[9.5px] uppercase tracking-[0.22em] opacity-90">
+                        <div className="mono text-[9.5px] uppercase tracking-[0.22em] text-ink/95">
                           {s.tag} · Volume {String(i + 1).padStart(2, "0")}
                         </div>
                       </div>

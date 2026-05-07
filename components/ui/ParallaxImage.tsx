@@ -12,7 +12,7 @@ export default function ParallaxImage({
   className = "",
   speed = 0.25,
   overlay = "forest",
-  scale = 1.15,
+  scale = 1.3,
   focal = "50% 50%",
   sizes = "(max-width: 768px) 100vw, 50vw",
   priority = false,
@@ -44,10 +44,14 @@ export default function ParallaxImage({
       start: "top bottom",
       end: "bottom top",
       onUpdate: (self) => {
-        const prog = self.progress - 0.5; // -0.5 (entering bottom) → +0.5 (leaving top)
-        const max = el.offsetHeight * 0.18;
-        const y = Math.max(-max, Math.min(max, prog * el.offsetHeight * speed));
-        layer.style.transform = `translate3d(0, ${y}px, 0) scale(${scale})`;
+        const prog = self.progress - 0.5;
+        const limit = (scale - 1) * 0.48 * el.offsetHeight;
+        const y = Math.max(-limit, Math.min(limit, prog * el.offsetHeight * speed));
+        gsap.set(layer, {
+          y: y,
+          scale: scale,
+          overwrite: "auto",
+        });
       },
     });
 
@@ -73,7 +77,7 @@ export default function ParallaxImage({
         className="absolute inset-0 will-change-transform"
         style={{
           transform: `translate3d(0, 0, 0) scale(${scale})`,
-          transformOrigin: focal,
+          transformOrigin: "50% 50%",
         }}
       >
         <Image

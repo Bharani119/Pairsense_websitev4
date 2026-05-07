@@ -77,11 +77,11 @@ export default function Capabilities() {
                     className="aspect-[16/10] w-full"
                     overlay="forest"
                     speed={0.3}
-                    scale={1.15}
+                    scale={1.5}
                   >
-                    <div className="absolute inset-0 flex flex-col justify-between p-8 text-bg">
+                    <div className="absolute inset-0 flex flex-col justify-between p-8 text-ink">
                       <div className="flex items-start justify-between">
-                        <div className="numeral" style={{ color: "rgba(246,243,234,0.85)" }}>
+                        <div className="numeral" style={{ color: "rgba(246,243,234,0.98)" }}>
                           {c.n} / 04
                         </div>
                         <div className="mono text-[10px] uppercase tracking-[0.22em] opacity-90">

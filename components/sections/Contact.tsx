@@ -44,7 +44,7 @@ export default function Contact() {
             className="!absolute inset-0 w-full h-full"
             overlay="none"
             speed={0.35}
-            scale={1.25}
+            scale={1.6}
             focal="50% 40%"
           />
           <div

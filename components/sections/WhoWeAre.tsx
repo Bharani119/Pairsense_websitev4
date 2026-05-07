@@ -4,10 +4,9 @@ import Reveal from "@/components/ui/Reveal";
 export default function WhoWeAre() {
   return (
     <section className="section section-border relative overflow-hidden bg-bg">
-      {/* Dynamic background image */}
       <div 
-        className="absolute inset-0 z-0 bg-cover bg-center opacity-40 mix-blend-screen" 
-        style={{ backgroundImage: 'url(/manifesto_bg.png)' }} 
+        className="absolute inset-0 z-0 bg-cover bg-center opacity-25 mix-blend-screen scale-110" 
+        style={{ backgroundImage: 'url(/manifesto_bg_taste_scent_v3.png)' }} 
       />
       {/* diagonal ornament grid overlay */}
       <div
