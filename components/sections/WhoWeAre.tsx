@@ -24,7 +24,7 @@ export default function WhoWeAre() {
           <div className="col-span-12 md:col-span-3">
             <div className="eyebrow">
               <span className="rule" />
-              Manifesto · 06
+              Manifesto · 02
             </div>
           </div>
           <div className="col-span-12 md:col-span-9 flex flex-col items-end text-right">

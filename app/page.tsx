@@ -15,12 +15,12 @@ export default function Page() {
     <>
       <Hero />
       <Flavours />
-      <InnovationLoop />
-      <Capabilities />
       <About />
-      <Segments />
+      <InnovationLoop />
       <WhoWeAre />
+      <Capabilities />
       <Process />
+      <Segments />
       <CategoryStrip />
       <Contact />
       <Footer />
