@@ -6,7 +6,7 @@ export default function WhoWeAre() {
     <section className="section section-border relative overflow-hidden bg-bg">
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center opacity-25 mix-blend-screen scale-110" 
-        style={{ backgroundImage: 'url(/manifesto_bg_taste_scent_v3.png)' }} 
+        style={{ backgroundImage: 'url(/manifesto_bg.png)' }} 
       />
       {/* diagonal ornament grid overlay */}
       <div
