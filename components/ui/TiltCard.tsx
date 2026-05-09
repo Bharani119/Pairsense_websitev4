@@ -23,7 +23,7 @@ export default function TiltCard({
     el.style.transform = `perspective(1200px) rotateX(${rx}deg) rotateY(${ry}deg) translateZ(0)`;
     const glare = el.querySelector<HTMLDivElement>("[data-glare]");
     if (glare) {
-      glare.style.background = `radial-gradient(420px circle at ${px * 100}% ${py * 100}%, rgba(255,255,255,0.6), transparent 40%)`;
+      glare.style.background = `radial-gradient(250px circle at ${px * 100}% ${py * 100}%, rgba(255,255,255,0.6), transparent 40%)`;
     }
   };
 

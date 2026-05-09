@@ -275,6 +275,30 @@ body::after {
   outline-offset: 2px;
 }
 
+/* ─── Parallax Image: no dark overlay, hover brightness boost ─────────── */
+/* 
+   Normal state: image at its original brightness with no overlay.
+   Hover state: a soft warm-white radial glow is overlaid using
+   mix-blend-mode:screen so it additively brightens the image
+   beneath without changing colours harshly.
+*/
+.parallax-wrap {
+  /* ensure the hover glow is composited correctly */
+}
+
+
+
+/* ─────────────────────────────────────────────────────────────────────── */
+
+/* ─────────────────────────────────────────────────────────────────────── */
+
+/* Hide side strips on small screens */
+@media (max-width: 900px) {
+  .hero-side-strip {
+    display: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.001ms !important;

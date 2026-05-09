@@ -4,15 +4,12 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-type OverlayStyle = "forest" | "cream" | "gold" | "duotone" | "none";
-
 export default function ParallaxImage({
   src,
   alt,
   className = "",
-  speed = 0.25,
-  overlay = "forest",
-  scale = 1.3,
+  speed = 0.3,
+  scale = 1.18,
   focal = "50% 50%",
   sizes = "(max-width: 768px) 100vw, 50vw",
   priority = false,
@@ -22,7 +19,8 @@ export default function ParallaxImage({
   alt: string;
   className?: string;
   speed?: number;
-  overlay?: OverlayStyle;
+  /** overlay prop kept for API compatibility */
+  overlay?: string;
   scale?: number;
   focal?: string;
   sizes?: string;
@@ -31,6 +29,7 @@ export default function ParallaxImage({
 }) {
   const wrap = useRef<HTMLDivElement>(null);
   const inner = useRef<HTMLDivElement>(null);
+  const currentY = useRef(0);
 
   useEffect(() => {
     const el = wrap.current;
@@ -39,44 +38,49 @@ export default function ParallaxImage({
 
     gsap.registerPlugin(ScrollTrigger);
 
+    // Use a gsap quickSetter for smooth GPU-composited updates
+    const setY = gsap.quickSetter(layer, "y", "px");
+
+    let targetY = 0;
+
     const st = ScrollTrigger.create({
       trigger: el,
       start: "top bottom",
       end: "bottom top",
       onUpdate: (self) => {
+        // progress goes 0 → 1 as element scrolls through viewport
+        // remap to -0.5 → +0.5 so image is centred mid-screen
         const prog = self.progress - 0.5;
-        const limit = (scale - 1) * 0.48 * el.offsetHeight;
-        const y = Math.max(-limit, Math.min(limit, prog * el.offsetHeight * speed));
-        gsap.set(layer, {
-          y: y,
-          scale: scale,
-          overwrite: "auto",
-        });
+        // Max safe drift without exposing container background is half of the scaled overflow
+        const max = el.offsetHeight * ((scale - 1) / 2);
+        targetY = Math.max(-max, Math.min(max, prog * el.offsetHeight * speed));
       },
     });
 
-    return () => st.kill();
+    // Smooth lerp on every GSAP tick for buttery motion
+    const ticker = gsap.ticker.add(() => {
+      // lerp current toward target (0.1 = smooth, 0.2 = snappier)
+      currentY.current += (targetY - currentY.current) * 0.1;
+      setY(currentY.current);
+    });
+
+    return () => {
+      st.kill();
+      gsap.ticker.remove(ticker);
+    };
   }, [speed, scale]);
 
-  const overlayBg: Record<OverlayStyle, string> = {
-    forest:
-      "linear-gradient(165deg, rgba(5,4,2,0.72) 0%, rgba(10,8,5,0.40) 45%, rgba(201,168,76,0.20) 100%)",
-    cream:
-      "linear-gradient(165deg, rgba(10,8,5,0.55) 0%, rgba(15,12,7,0.35) 50%, rgba(201,168,76,0.25) 100%)",
-    gold:
-      "linear-gradient(165deg, rgba(201,168,76,0.40) 0%, rgba(10,8,5,0.65) 100%)",
-    duotone:
-      "linear-gradient(165deg, rgba(5,4,2,0.80) 0%, rgba(138,106,42,0.50) 100%)",
-    none: "transparent",
-  };
-
   return (
-    <div ref={wrap} className={`relative overflow-hidden ${className}`}>
+    <div
+      ref={wrap}
+      className={`relative overflow-hidden parallax-wrap ${className}`}
+    >
+      {/* Parallax image layer — only y shifts, scale is CSS only */}
       <div
         ref={inner}
         className="absolute inset-0 will-change-transform"
         style={{
-          transform: `translate3d(0, 0, 0) scale(${scale})`,
+          transform: `scale(${scale})`,
           transformOrigin: "50% 50%",
         }}
       >
@@ -93,12 +97,7 @@ export default function ParallaxImage({
         />
       </div>
 
-      {overlay !== "none" && (
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{ background: overlayBg[overlay] }}
-        />
-      )}
+
 
       {children}
     </div>
