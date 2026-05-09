@@ -61,7 +61,7 @@ export default function InnovationLoop() {
           className="absolute inset-0"
           overlay="none"
           speed={0.3}
-          scale={1.2}
+          scale={1.5}
           focal="50% 35%"
         />
         {/* soft dual-gradient: readable ink text up top, clean fade into the page */}

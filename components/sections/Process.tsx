@@ -70,7 +70,7 @@ export default function Process() {
                     focal={it.focal}
                   >
                     {/* overlay chrome on image */}
-                    <div className="absolute inset-0 flex flex-col justify-between p-7 text-bg">
+                    <div className="absolute inset-0 flex flex-col justify-between p-7 text-ink/90">
                       <div className="flex items-start justify-between">
                         <span className="mono text-[10px] uppercase tracking-[0.22em] opacity-90">
                           Movement · {it.n}
@@ -84,7 +84,7 @@ export default function Process() {
                           {it.tag}
                         </div>
                         <svg
-                          className="mt-3 text-bg"
+                          className="mt-3 text-ink/60"
                           width="60"
                           height="24"
                           viewBox="0 0 60 24"
