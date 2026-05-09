@@ -12,76 +12,25 @@ const MolecularField = dynamic(
 export default function Hero() {
   return (
     <section className="relative h-[100svh] min-h-[720px] overflow-hidden bg-bg">
-      {/* atmospheric gradient base */}
-      <div
-        aria-hidden
-        className="absolute inset-0 z-0"
-        style={{
-          background:
-            "radial-gradient(80% 60% at 50% 20%, #2e2814 0%, #1e1a0f 45%, #0a0805 100%)",
-        }}
-      />
+      {/* background image */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/first-section-bg.jpeg"
+          alt="Pairsense background"
+          fill
+          priority
+          className="object-cover"
+        />
+        {/* subtle dark overlay to ensure text readability */}
+        <div className="absolute inset-0 bg-bg/40 mix-blend-multiply" />
+      </div>
 
       {/* 3D molecular field */}
       <div className="absolute inset-0 z-0">
         <MolecularField />
       </div>
 
-      {/* ── FRAGRANCE side (Left) ─────────────────────────────────────── */}
-      <div 
-        className="absolute left-[-5vw] bottom-[5vh] z-10 w-[35vw] max-w-[540px] hidden lg:block opacity-80"
-        style={{
-          maskImage: 'radial-gradient(circle at center, black 40%, transparent 85%)',
-          WebkitMaskImage: 'radial-gradient(circle at center, black 40%, transparent 85%)',
-        }}
-      >
-        <div className="relative aspect-[4/5] overflow-hidden mb-6">
-          <Image
-            src="/hero_fragrance.png"
-            alt="Luxury perfume bottle with white flowers"
-            fill
-            className="object-contain mix-blend-lighten"
-            priority
-          />
-        </div>
-        <div className="pl-[8vw]">
-          <div className="flex items-center gap-2 mb-2">
-             <span className="w-1.5 h-1.5 rounded-full bg-gold inline-block" />
-             <span className="mono text-[11px] uppercase tracking-[0.3em] text-ink/80 font-bold">Fragrance</span>
-          </div>
-          <p className="text-[12px] leading-[1.6] text-ink/40 max-w-[24ch]">
-            Engineered aromatic molecules for captivating scents.
-          </p>
-        </div>
-      </div>
 
-      {/* ── FLAVOR side (Right) ────────────────────────────────────────── */}
-      <div 
-        className="absolute right-[-5vw] bottom-[5vh] z-10 w-[35vw] max-w-[540px] hidden lg:block opacity-80"
-        style={{
-          maskImage: 'radial-gradient(circle at center, black 40%, transparent 85%)',
-          WebkitMaskImage: 'radial-gradient(circle at center, black 40%, transparent 85%)',
-        }}
-      >
-        <div className="relative aspect-[4/5] overflow-hidden mb-6">
-          <Image
-            src="/hero_flavor.png"
-            alt="Gourmet fruits and vanilla beans"
-            fill
-            className="object-contain mix-blend-lighten"
-            priority
-          />
-        </div>
-        <div className="pr-[8vw] text-right">
-          <div className="flex items-center gap-2 mb-2 justify-end">
-             <span className="w-1.5 h-1.5 rounded-full bg-gold inline-block" />
-             <span className="mono text-[11px] uppercase tracking-[0.3em] text-ink/80 font-bold">Flavor</span>
-          </div>
-          <p className="text-[12px] leading-[1.6] text-ink/40 max-w-[24ch] ml-auto">
-            Precision flavors for unforgettable taste experiences.
-          </p>
-        </div>
-      </div>
 
       {/* main headline */}
       <div className="relative z-20 container-wide h-full grid place-items-center px-4 sm:px-6 pointer-events-none">
