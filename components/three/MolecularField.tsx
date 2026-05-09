@@ -98,20 +98,7 @@ function Particles() {
   );
 }
 
-function Halo() {
-  const ref = useRef<THREE.Mesh>(null);
-  useFrame(({ clock }) => {
-    if (ref.current) {
-      ref.current.rotation.z = clock.elapsedTime * 0.05;
-    }
-  });
-  return (
-    <mesh ref={ref} position={[0, 0, -2]}>
-      <ringGeometry args={[3.2, 3.22, 128]} />
-      <meshBasicMaterial color="#b08b4f" transparent opacity={0.2} />
-    </mesh>
-  );
-}
+
 
 function GeometricStructures() {
   const groupRef = useRef<THREE.Group>(null);
@@ -161,7 +148,6 @@ export default function MolecularField() {
     >
       <ambientLight intensity={0.5} />
       <Particles />
-      <Halo />
       <GeometricStructures />
     </Canvas>
   );
