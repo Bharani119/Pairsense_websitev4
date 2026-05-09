@@ -4,10 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 const items = [
-  { label: "Capabilities", href: "#capabilities" },
   { label: "About", href: "#about" },
-  { label: "Segments", href: "#segments" },
+  { label: "Capabilities", href: "#capabilities" },
   { label: "Process", href: "#process" },
+  { label: "Segments", href: "#segments" },
 ];
 
 export default function Nav() {
