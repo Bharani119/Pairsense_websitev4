@@ -36,7 +36,7 @@ export default function CategoryStrip() {
         <div>
           <div className="mono text-[10px] uppercase tracking-[0.22em] text-gold/60">
             <span className="rule" style={{ background: "var(--gold)" }} />
-            Global Reach · 07
+            Global Reach · 05
           </div>
           <Reveal>
             <h3 className="display text-[clamp(32px,3.4vw,56px)] mt-4 max-w-[800px]">

@@ -48,7 +48,7 @@ export default function About() {
           <div className="col-span-12 lg:col-span-7 lg:pr-8 lg:order-first">
             <div className="eyebrow">
               <span className="rule" />
-              About · 04
+              About · 01
             </div>
 
             <Reveal>

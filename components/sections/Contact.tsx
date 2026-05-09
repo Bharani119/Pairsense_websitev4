@@ -35,73 +35,6 @@ export default function Contact() {
 
   return (
     <section id="contact" className="section-border relative overflow-hidden">
-      {/* hero CTA band — cream identity preserved, parallax image breathes behind the wash */}
-      <div className="relative border-b border-line overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <ParallaxImage
-            src={IMG.contact.ctaBg}
-            alt=""
-            className="!absolute inset-0 w-full h-full"
-            overlay="none"
-            speed={0.35}
-            scale={1.6}
-            focal="50% 40%"
-          />
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                "linear-gradient(180deg, rgba(10,8,5,0.7) 0%, rgba(10,8,5,0.4) 35%, rgba(10,8,5,0.5) 70%, rgba(10,8,5,0.8) 100%)",
-            }}
-          />
-          <div
-            className="absolute inset-0 mix-blend-overlay opacity-60"
-            style={{
-              background:
-                "radial-gradient(100% 70% at 70% 40%, rgba(201,168,76,0.18) 0%, transparent 60%), radial-gradient(80% 60% at 10% 90%, rgba(201,168,76,0.10) 0%, transparent 70%)",
-            }}
-          />
-        </div>
-
-        <div className="container-wide py-28 md:py-44 relative">
-          <Reveal>
-            <div className="eyebrow">
-              <span className="rule" />
-              Commence · 08
-            </div>
-          </Reveal>
-          <Reveal delay={120}>
-            <h2 className="display mt-6 text-[clamp(48px,9vw,168px)] leading-[0.9]">
-              Let&apos;s engineer <br />
-              your <span className="italic text-gold">signature</span>.
-            </h2>
-          </Reveal>
-          <Reveal delay={240}>
-            <div className="mt-14 grid md:grid-cols-3 gap-10 items-end">
-              <div className="md:col-span-2">
-                <p className="text-[15px] leading-[1.8] text-ink/80 max-w-[52ch]">
-                  Briefs are read by a senior formulator within seven working
-                  days. Include your product vision, target market, and any
-                  regulatory environment — we&apos;ll respond with a formulation
-                  roadmap.
-                </p>
-              </div>
-              <div className="flex flex-col gap-2 md:items-end">
-                <div className="mono text-[10px] uppercase tracking-[0.22em] text-moss">
-                  Direct Line
-                </div>
-                <a
-                  href="mailto:reach@pairsense.co"
-                  className="display text-3xl link-underline"
-                >
-                  reach@pairsense.co
-                </a>
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </div>
-
       {/* form block — main background cream; only the left meta panel is forest-green */}
       <div id="contact-form" className="relative py-24 md:py-32">
         <div className="container-wide relative">
@@ -134,7 +67,7 @@ export default function Contact() {
                         className="rule"
                         style={{ background: "#e8e2cf", opacity: 0.85 }}
                       />
-                      Brief Intake · 09
+                      Brief Intake · 06
                     </div>
                     <h3
                       className="display mt-6 text-[clamp(32px,3.4vw,52px)] leading-[1]"
@@ -303,6 +236,73 @@ export default function Contact() {
               </Reveal>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* hero CTA band — cream identity preserved, parallax image breathes behind the wash */}
+      <div className="relative border-t border-line overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <ParallaxImage
+            src={IMG.contact.ctaBg}
+            alt=""
+            className="!absolute inset-0 w-full h-full"
+            overlay="none"
+            speed={0.35}
+            scale={1.25}
+            focal="50% 40%"
+          />
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(180deg, rgba(10,8,5,0.7) 0%, rgba(10,8,5,0.4) 35%, rgba(10,8,5,0.5) 70%, rgba(10,8,5,0.8) 100%)",
+            }}
+          />
+          <div
+            className="absolute inset-0 mix-blend-overlay opacity-60"
+            style={{
+              background:
+                "radial-gradient(100% 70% at 70% 40%, rgba(201,168,76,0.18) 0%, transparent 60%), radial-gradient(80% 60% at 10% 90%, rgba(201,168,76,0.10) 0%, transparent 70%)",
+            }}
+          />
+        </div>
+
+        <div className="container-wide py-28 md:py-44 relative">
+          <Reveal>
+            <div className="eyebrow">
+              <span className="rule" />
+              Commence · 07
+            </div>
+          </Reveal>
+          <Reveal delay={120}>
+            <h2 className="display mt-6 text-[clamp(48px,9vw,168px)] leading-[0.9]">
+              Let&apos;s engineer <br />
+              your <span className="italic text-gold">signature</span>.
+            </h2>
+          </Reveal>
+          <Reveal delay={240}>
+            <div className="mt-14 grid md:grid-cols-3 gap-10 items-end">
+              <div className="md:col-span-2">
+                <p className="text-[15px] leading-[1.8] text-ink/80 max-w-[52ch]">
+                  Briefs are read by a senior formulator within seven working
+                  days. Include your product vision, target market, and any
+                  regulatory environment — we&apos;ll respond with a formulation
+                  roadmap.
+                </p>
+              </div>
+              <div className="flex flex-col gap-2 md:items-end">
+                <div className="mono text-[10px] uppercase tracking-[0.22em] text-moss">
+                  Direct Line
+                </div>
+                <a
+                  href="mailto:reach@pairsense.co"
+                  className="display text-3xl link-underline"
+                >
+                  reach@pairsense.co
+                </a>
+              </div>
+            </div>
+          </Reveal>
         </div>
       </div>
     </section>
