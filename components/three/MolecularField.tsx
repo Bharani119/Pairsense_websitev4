@@ -5,37 +5,32 @@ import * as THREE from "three";
 
 /**
  * Molecular particle field — points that form soft clusters,
- * slowly drifting and rotating, mouse-reactive. A Pointer-Events
- * layer above captures mouse; scene tilts toward cursor.
+ * slowly drifting and rotating, mouse-reactive.
  */
 
 function Particles() {
   const ref = useRef<THREE.Points>(null);
   const linesRef = useRef<THREE.LineSegments>(null);
-  const { viewport, pointer } = useThree();
+  const { pointer } = useThree();
 
   const { positions, connections } = useMemo(() => {
-    const count = 260;
+    const count = 140; // Reduced from 260 for a cleaner look
     const pos = new Float32Array(count * 3);
-    const cluster = 8;
+    const cluster = 6;
     for (let i = 0; i < count; i++) {
-      const c = Math.floor(i / (count / cluster));
       const cx = (Math.random() - 0.5) * 6;
       const cy = (Math.random() - 0.5) * 3.5;
       const cz = (Math.random() - 0.5) * 3;
-      // distribute around cluster center
       const r = Math.pow(Math.random(), 0.7) * 0.9;
       const t = Math.random() * Math.PI * 2;
       const p = Math.acos(2 * Math.random() - 1);
       pos[i * 3] = cx + r * Math.sin(p) * Math.cos(t);
       pos[i * 3 + 1] = cy + r * Math.sin(p) * Math.sin(t);
       pos[i * 3 + 2] = cz + r * Math.cos(p);
-      void c;
     }
 
-    // compute short connections for molecular "bonds"
     const lineSegments: number[] = [];
-    const threshold = 0.55;
+    const threshold = 0.42; // Reduced from 0.55 for fewer connections
     for (let i = 0; i < count; i++) {
       for (let j = i + 1; j < count; j++) {
         const dx = pos[i * 3] - pos[j * 3];
@@ -59,14 +54,12 @@ function Particles() {
   useFrame((state) => {
     const t = state.clock.elapsedTime;
     if (ref.current) {
-      // Pure GPU-side rotation
-      ref.current.rotation.y = t * 0.05 + pointer.x * 0.25;
-      ref.current.rotation.x = Math.sin(t * 0.15) * 0.06 + pointer.y * 0.15;
+      ref.current.rotation.y = t * 0.04 + pointer.x * 0.2;
+      ref.current.rotation.x = Math.sin(t * 0.1) * 0.05 + pointer.y * 0.1;
     }
     if (linesRef.current) {
       linesRef.current.rotation.copy(ref.current!.rotation);
     }
-    void viewport;
   });
 
   return (
@@ -79,11 +72,11 @@ function Particles() {
           />
         </bufferGeometry>
         <pointsMaterial
-          size={0.028}
+          size={0.024}
           sizeAttenuation
-          color="#0f2e22"
+          color="#c9a84c"
           transparent
-          opacity={0.85}
+          opacity={0.6} // Reduced from 0.85
           depthWrite={false}
         />
       </points>
@@ -95,9 +88,9 @@ function Particles() {
           />
         </bufferGeometry>
         <lineBasicMaterial
-          color="#0f2e22"
+          color="#c9a84c"
           transparent
-          opacity={0.18}
+          opacity={0.12} // Reduced from 0.18
           depthWrite={false}
         />
       </lineSegments>
@@ -105,63 +98,40 @@ function Particles() {
   );
 }
 
-function Halo() {
-  const ref = useRef<THREE.Mesh>(null);
-  useFrame(({ clock }) => {
-    if (ref.current) {
-      ref.current.rotation.z = clock.elapsedTime * 0.05;
-    }
-  });
-  return (
-    <mesh ref={ref} position={[0, 0, -2]}>
-      <ringGeometry args={[3.2, 3.22, 128]} />
-      <meshBasicMaterial color="#b08b4f" transparent opacity={0.3} />
-    </mesh>
-  );
-}
+
 
 function GeometricStructures() {
   const groupRef = useRef<THREE.Group>(null);
   const mesh1 = useRef<THREE.Mesh>(null);
   const mesh2 = useRef<THREE.Mesh>(null);
-  const mesh3 = useRef<THREE.Mesh>(null);
 
   useFrame((state) => {
     const t = state.clock.elapsedTime;
     if (groupRef.current) {
-      groupRef.current.rotation.y = t * 0.1;
-      groupRef.current.rotation.x = t * 0.05;
+      groupRef.current.rotation.y = t * 0.08;
+      groupRef.current.rotation.x = t * 0.04;
     }
     if (mesh1.current) {
-      mesh1.current.rotation.x = t * 0.2;
-      mesh1.current.rotation.y = t * 0.3;
+      mesh1.current.rotation.x = t * 0.15;
+      mesh1.current.rotation.y = t * 0.25;
     }
     if (mesh2.current) {
-      mesh2.current.rotation.x = -t * 0.15;
-      mesh2.current.rotation.z = t * 0.25;
-    }
-    if (mesh3.current) {
-      mesh3.current.rotation.y = t * 0.1;
-      mesh3.current.rotation.z = -t * 0.1;
+      mesh2.current.rotation.x = -t * 0.1;
+      mesh2.current.rotation.z = t * 0.15;
     }
   });
 
   return (
-    <group ref={groupRef} position={[0, 0, -1]}>
+    <group ref={groupRef} position={[0, 0, -1.5]}>
       {/* Inner Icosahedron */}
       <mesh ref={mesh1}>
         <icosahedronGeometry args={[2.5, 0]} />
-        <meshBasicMaterial color="#c9a84c" wireframe transparent opacity={0.15} />
+        <meshBasicMaterial color="#c9a84c" wireframe transparent opacity={0.12} />
       </mesh>
       {/* Mid Octahedron */}
       <mesh ref={mesh2}>
-        <octahedronGeometry args={[3.8, 0]} />
-        <meshBasicMaterial color="#6b5a38" wireframe transparent opacity={0.1} />
-      </mesh>
-      {/* Outer abstract shape */}
-      <mesh ref={mesh3}>
-        <tetrahedronGeometry args={[4.5, 1]} />
-        <meshBasicMaterial color="#0f2e22" wireframe transparent opacity={0.2} />
+        <octahedronGeometry args={[4.2, 0]} />
+        <meshBasicMaterial color="#c9a84c" wireframe transparent opacity={0.06} />
       </mesh>
     </group>
   );
@@ -178,7 +148,6 @@ export default function MolecularField() {
     >
       <ambientLight intensity={0.5} />
       <Particles />
-      <Halo />
       <GeometricStructures />
     </Canvas>
   );

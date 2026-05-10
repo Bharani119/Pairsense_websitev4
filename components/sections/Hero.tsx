@@ -1,5 +1,6 @@
 "use client";
 import dynamic from "next/dynamic";
+import Image from "next/image";
 import SplitText from "@/components/ui/SplitText";
 import Reveal from "@/components/ui/Reveal";
 
@@ -10,28 +11,31 @@ const MolecularField = dynamic(
 
 export default function Hero() {
   return (
-    <section className="relative h-[100svh] min-h-[720px] overflow-hidden">
-      {/* atmospheric gradient base */}
-      <div
-        aria-hidden
-        className="absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(80% 60% at 50% 20%, #2e2814 0%, #1e1a0f 45%, #0a0805 100%)",
-        }}
-      />
+    <section className="relative h-[100svh] min-h-[720px] overflow-hidden bg-bg">
+      {/* background image */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/first-section-bg.jpeg"
+          alt="Pairsense background"
+          fill
+          priority
+          className="object-cover"
+        />
+        {/* subtle dark overlay to ensure text readability */}
+        <div className="absolute inset-0 bg-bg/40 mix-blend-multiply" />
+      </div>
 
       {/* 3D molecular field */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 z-0">
         <MolecularField />
       </div>
 
 
 
       {/* main headline */}
-      <div className="relative z-10 container-wide h-full grid place-items-center px-4 sm:px-6">
-        <div className="w-full max-w-[1400px] text-center">
-          <h1 className="display mx-auto max-w-[12ch] text-[clamp(44px,9vw,184px)] leading-[0.92]">
+      <div className="relative z-20 container-wide h-full grid place-items-center px-4 sm:px-6 pointer-events-none">
+        <div className="w-full max-w-[1400px] text-center pointer-events-auto">
+          <h1 className="display mx-auto max-w-[12ch] text-[clamp(44px,6.5vw,160px)] leading-[0.92] text-ink">
             <span className="block">
               <SplitText text="Engineering flavors." />
             </span>
@@ -63,8 +67,6 @@ export default function Hero() {
           </Reveal>
         </div>
       </div>
-
-
     </section>
   );
 }
