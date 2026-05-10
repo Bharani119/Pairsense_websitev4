@@ -67,7 +67,7 @@ export default function Contact() {
                         className="rule"
                         style={{ background: "#e8e2cf", opacity: 0.85 }}
                       />
-                      Brief Intake · 06
+                      Brief Intake · 08
                     </div>
                     <h3
                       className="display mt-6 text-[clamp(32px,3.4vw,52px)] leading-[1]"
@@ -271,7 +271,7 @@ export default function Contact() {
           <Reveal>
             <div className="eyebrow">
               <span className="rule" />
-              Commence · 07
+              Commence · 09
             </div>
           </Reveal>
           <Reveal delay={120}>

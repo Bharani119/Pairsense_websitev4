@@ -4,10 +4,13 @@ import Image from "next/image";
 import Link from "next/link";
 
 const items = [
-  { label: "About", href: "#about" },
-  { label: "Capabilities", href: "#capabilities" },
-  { label: "Process", href: "#process" },
-  { label: "Segments", href: "#segments" },
+  { label: "About", href: "#about", n: "01" },
+  { label: "Global Reach", href: "#global-reach", n: "02" },
+  { label: "Manifesto", href: "#manifesto", n: "03" },
+  { label: "Capabilities", href: "#capabilities", n: "04" },
+  { label: "Process", href: "#process", n: "05" },
+  { label: "Segments", href: "#segments", n: "06" },
+  // { label: "Principles", href: "#innovation", n: "07" },
 ];
 
 export default function Nav() {
@@ -56,15 +59,15 @@ export default function Nav() {
           </span>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-10">
-          {items.map((it, i) => (
+        <nav className="hidden md:flex items-center gap-6">
+          {items.map((it) => (
             <a
               key={it.href}
               href={it.href}
               className="mono text-[11px] uppercase tracking-[0.22em] text-ink/70 hover:text-ink transition-colors"
             >
               <span className="numeral mr-2 text-moss">
-                0{i + 1}
+                {it.n}
               </span>
               {it.label}
             </a>

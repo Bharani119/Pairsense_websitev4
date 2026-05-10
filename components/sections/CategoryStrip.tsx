@@ -23,7 +23,7 @@ const categories = [
 
 export default function CategoryStrip() {
   return (
-    <section className="section-border py-20 bg-bg-alt text-ink overflow-hidden relative">
+    <section id="global-reach" className="section-border py-20 bg-bg-alt text-ink overflow-hidden relative">
       <div
         aria-hidden
         className="absolute inset-0 opacity-30"
@@ -36,7 +36,7 @@ export default function CategoryStrip() {
         <div>
           <div className="mono text-[10px] uppercase tracking-[0.22em] text-gold/60">
             <span className="rule" style={{ background: "var(--gold)" }} />
-            Global Reach · 05
+            Global Reach · 02
           </div>
           <Reveal>
             <h3 className="display text-[clamp(32px,3.4vw,56px)] mt-4 max-w-[800px]">

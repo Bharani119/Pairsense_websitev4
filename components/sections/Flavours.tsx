@@ -70,14 +70,14 @@ export default function Flavours() {
     >
       <div className="relative h-full w-full">
         {/* Scroll Indicator */}
-        <div ref={scrollIndicatorRef} className="absolute bottom-12 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center pointer-events-none transition-transform duration-700">
-          <div className="glass px-6 py-5 rounded-[28px] flex flex-col items-center gap-4 shadow-2xl backdrop-blur-2xl border-white/15">
-            <span className="mono text-[11px] font-medium uppercase tracking-[0.35em] text-[#eedb9f] ml-1">Scroll to explore</span>
-            <div className="w-[1.5px] h-[44px] bg-white/20 relative overflow-hidden rounded-full">
-              <div className="absolute inset-0 bg-[#eedb9f] animate-scroll-down" style={{ boxShadow: "0 0 12px #eedb9f" }} />
-            </div>
-          </div>
-        </div>
+        {/* <div ref={scrollIndicatorRef} className="absolute bottom-12 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center pointer-events-none transition-transform duration-700"> */}
+          {/* <div className="glass px-6 py-5 rounded-[28px] flex flex-col items-center gap-4 shadow-2xl backdrop-blur-2xl border-white/15"> */}
+            {/* <span className="mono text-[11px] font-medium uppercase tracking-[0.35em] text-[#eedb9f] ml-1">Scroll to explore</span> */}
+            {/* <div className="w-[1.5px] h-[44px] bg-white/20 relative overflow-hidden rounded-full"> */}
+              {/* <div className="absolute inset-0 bg-[#eedb9f] animate-scroll-down" style={{ boxShadow: "0 0 12px #eedb9f" }} /> */}
+            {/* </div> */}
+          {/* </div> */}
+        {/* </div> */}
 
         {/* Sequence 01: Left */}
         <div ref={block1Ref} className="absolute left-[8%] top-[25%] z-20 pointer-events-none" style={{ opacity: 0 }}>

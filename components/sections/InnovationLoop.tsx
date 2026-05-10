@@ -85,7 +85,7 @@ export default function InnovationLoop() {
         <div>
           <div className="eyebrow">
             <span className="rule" />
-            Operating Principles
+            Operating Principles · 07
           </div>
           <Reveal>
             <h2 className="display mt-6 text-[clamp(40px,5vw,72px)] max-w-[720px]">
@@ -95,7 +95,7 @@ export default function InnovationLoop() {
         </div>
         <Reveal delay={120}>
           <div className="mono text-[11px] uppercase tracking-[0.22em] text-moss hidden md:block">
-            §02 · Doctrine
+            §07 · Doctrine
           </div>
         </Reveal>
       </div>

@@ -3,7 +3,7 @@ import Reveal from "@/components/ui/Reveal";
 
 export default function WhoWeAre() {
   return (
-    <section className="section section-border relative overflow-hidden bg-bg">
+    <section id="manifesto" className="section section-border relative overflow-hidden bg-bg">
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center opacity-25 mix-blend-screen scale-110" 
         style={{ backgroundImage: 'url(/manifesto_bg.png)' }} 
@@ -23,7 +23,7 @@ export default function WhoWeAre() {
           <div className="col-span-12 md:col-span-3">
             <div className="eyebrow">
               <span className="rule" />
-              Manifesto · 02
+              Manifesto · 03
             </div>
           </div>
           <div className="col-span-12 md:col-span-9 flex flex-col items-end text-right">

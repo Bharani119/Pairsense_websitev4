@@ -42,7 +42,7 @@ export default function Process() {
           <div className="col-span-12 md:col-span-4">
             <div className="eyebrow">
               <span className="rule" />
-              The Method
+              The Method · 05
             </div>
           </div>
           <div className="col-span-12 md:col-span-8">

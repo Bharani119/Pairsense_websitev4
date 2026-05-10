@@ -47,7 +47,7 @@ export default function Segments() {
           <div className="col-span-12 md:col-span-5">
             <div className="eyebrow">
               <span className="rule" />
-              Industry Segments · 04
+              Industry Segments · 06
             </div>
           </div>
           <div className="col-span-12 md:col-span-7">
