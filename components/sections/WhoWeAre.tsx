@@ -37,18 +37,18 @@ export default function WhoWeAre() {
             </Reveal>
 
             <Reveal delay={200}>
-              <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-8 w-full max-w-[900px]">
+              <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-y-10 gap-x-8 w-full max-w-[900px]">
                 {[
                   { n: "1200+", l: "Aroma molecules catalogued" },
                   { n: "48", l: "Markets sourced" },
                   { n: "18", l: "Sector verticals" },
                   { n: "0.01%", l: "Formulation tolerance" },
                 ].map((s) => (
-                  <div key={s.l} className="border-t border-line pt-5 flex flex-col items-end text-right">
-                    <div className="display text-[clamp(30px,3.2vw,48px)]">
+                  <div key={s.l} className="border-t border-line pt-5 flex flex-col items-start sm:items-end text-left sm:text-right">
+                    <div className="display text-[clamp(32px,3.2vw,48px)]">
                       {s.n}
                     </div>
-                    <div className="mono text-[10px] uppercase tracking-[0.2em] text-moss mt-2 max-w-[20ch]">
+                    <div className="mono text-[10px] uppercase tracking-[0.2em] text-moss mt-2 max-w-none sm:max-w-[20ch]">
                       {s.l}
                     </div>
                   </div>

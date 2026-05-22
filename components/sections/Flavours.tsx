@@ -80,120 +80,128 @@ export default function Flavours() {
         {/* </div> */}
 
         {/* Sequence 01: Left */}
-        <div ref={block1Ref} className="absolute left-[8%] top-[25%] z-20 pointer-events-none" style={{ opacity: 0 }}>
-          <div className="h-px w-16 bg-white/40 mb-6" />
-          <p className="mono mb-2 text-[11px] uppercase tracking-[0.4em] text-white/60">Phase 01</p>
-          <h2 className="display text-[clamp(48px,6vw,90px)] leading-[0.9] text-white mb-8">Fragrance</h2>
-          <div className="flex flex-col gap-5">
-              <div>
-                <p className="text-[11px] mono uppercase tracking-widest text-[#eedb9f] mb-1 drop-shadow-md">Top Notes</p>
-                <p className="text-[15px] text-white/90 leading-relaxed max-w-[280px] drop-shadow-md font-medium">Bergamot, Yuzu, and saffron-kissed Cardamom.</p>
-             </div>
-             <div>
-                <p className="text-[11px] mono uppercase tracking-widest text-[#eedb9f] mb-1 drop-shadow-md">Heart Notes</p>
-                <p className="text-[15px] text-white/90 leading-relaxed max-w-[280px] drop-shadow-md font-medium">Violet petals, Sea fennel, and Chalk mineral.</p>
-             </div>
+        <div ref={block1Ref} className="absolute left-[5%] md:left-[8%] top-[18%] md:top-[25%] right-[5%] md:right-auto z-20 pointer-events-none max-w-[90%] md:max-w-none" style={{ opacity: 0 }}>
+          <div className="glass-mobile p-5 md:p-0 rounded-2xl flex flex-col items-center md:items-start text-center md:text-left max-w-[340px] md:max-w-[280px] mx-auto md:mx-0 shadow-xl md:shadow-none">
+            <div className="h-px w-16 bg-white/40 mb-6 hidden md:block" />
+            <p className="mono mb-2 text-[11px] uppercase tracking-[0.4em] text-white/60">Phase 01</p>
+            <h2 className="display text-[clamp(38px,6vw,90px)] leading-[0.9] text-white mb-4 md:mb-8">Fragrance</h2>
+            <div className="flex flex-col gap-4 md:gap-5 w-full">
+                <div className="flex flex-col items-center md:items-start">
+                  <p className="text-[11px] mono uppercase tracking-widest text-[#eedb9f] mb-1 drop-shadow-md">Top Notes</p>
+                  <p className="text-[14px] md:text-[15px] text-white/90 leading-relaxed drop-shadow-md font-medium">Bergamot, Yuzu, and saffron-kissed Cardamom.</p>
+               </div>
+               <div className="flex flex-col items-center md:items-start">
+                  <p className="text-[11px] mono uppercase tracking-widest text-[#eedb9f] mb-1 drop-shadow-md">Heart Notes</p>
+                  <p className="text-[14px] md:text-[15px] text-white/90 leading-relaxed drop-shadow-md font-medium">Violet petals, Sea fennel, and Chalk mineral.</p>
+               </div>
+            </div>
           </div>
         </div>
 
         {/* Sequence 01: Right (Now Phase 02) */}
-        <div ref={block2Ref} className="absolute right-[8%] top-[40%] z-20 pointer-events-none text-right" style={{ opacity: 0 }}>
-          <div className="h-px w-16 bg-white/40 mb-6 ml-auto" />
-          <p className="mono mb-2 text-[11px] uppercase tracking-[0.4em] text-white/60 drop-shadow-md">Phase 02</p>
-          <h2 className="display text-[clamp(48px,6vw,90px)] leading-[0.9] text-white mb-8 drop-shadow-lg">Resonance</h2>
-          <div className="flex flex-col gap-5 items-end">
-             <div>
-                <p className="text-[11px] mono uppercase tracking-widest text-[#eedb9f] mb-1 drop-shadow-md">Base Notes</p>
-                <p className="text-[15px] text-white/90 leading-relaxed max-w-[280px] drop-shadow-md font-medium">Aged oud, Haitian vetiver, and Tonka bean.</p>
-             </div>
-             <div>
-                <p className="text-[11px] mono uppercase tracking-widest text-[#eedb9f] mb-1 drop-shadow-md">Sillage</p>
-                <p className="text-[15px] text-white/90 leading-relaxed max-w-[280px] drop-shadow-md font-medium">A long, seamless finish that suggests modern luxury.</p>
-             </div>
+        <div ref={block2Ref} className="absolute right-[5%] md:right-[8%] top-[20%] md:top-[40%] left-[5%] md:left-auto z-20 pointer-events-none max-w-[90%] md:max-w-none" style={{ opacity: 0 }}>
+          <div className="glass-mobile p-5 md:p-0 rounded-2xl flex flex-col items-center md:items-end text-center md:text-right max-w-[340px] md:max-w-[280px] mx-auto md:mx-0 shadow-xl md:shadow-none">
+            <div className="h-px w-16 bg-white/40 mb-6 ml-auto hidden md:block" />
+            <p className="mono mb-2 text-[11px] uppercase tracking-[0.4em] text-white/60 drop-shadow-md">Phase 02</p>
+            <h2 className="display text-[clamp(38px,6vw,90px)] leading-[0.9] text-white mb-4 md:mb-8 drop-shadow-lg">Resonance</h2>
+            <div className="flex flex-col gap-4 md:gap-5 w-full">
+               <div className="flex flex-col items-center md:items-end">
+                  <p className="text-[11px] mono uppercase tracking-widest text-[#eedb9f] mb-1 drop-shadow-md">Base Notes</p>
+                  <p className="text-[14px] md:text-[15px] text-white/90 leading-relaxed drop-shadow-md font-medium">Aged oud, Haitian vetiver, and Tonka bean.</p>
+               </div>
+               <div className="flex flex-col items-center md:items-end">
+                  <p className="text-[11px] mono uppercase tracking-widest text-[#eedb9f] mb-1 drop-shadow-md">Sillage</p>
+                  <p className="text-[14px] md:text-[15px] text-white/90 leading-relaxed drop-shadow-md font-medium">A long, seamless finish that suggests modern luxury.</p>
+               </div>
+            </div>
           </div>
         </div>
 
         {/* Sequence 02: Left */}
-        <div ref={block3Ref} className="absolute left-[8%] top-[25%] z-20 pointer-events-none" style={{ opacity: 0 }}>
-          <div className="h-px w-16 bg-white/40 mb-6" />
-          <p className="mono mb-2 text-[11px] uppercase tracking-[0.4em] text-white/60">Phase 03</p>
-          <h2 className="display text-[clamp(48px,6vw,90px)] leading-[0.9] text-white mb-8">Synthesis</h2>
-          <div className="flex flex-col gap-5">
-             <div>
-                <p className="text-[11px] mono uppercase tracking-widest text-[#eedb9f] mb-1 drop-shadow-md">Sensory Integration</p>
-                <p className="text-[15px] text-white/90 leading-relaxed max-w-[280px] drop-shadow-md font-medium">Merging olfactory and gustatory elements for a full spectrum experience.</p>
-             </div>
-             <div>
-                <p className="text-[11px] mono uppercase tracking-widest text-[#eedb9f] mb-1 drop-shadow-md">Molecular Balance</p>
-                <p className="text-[15px] text-white/90 leading-relaxed max-w-[280px] drop-shadow-md font-medium">Achieving perfect harmony at the molecular level, bridging taste and smell.</p>
-             </div>
+        <div ref={block3Ref} className="absolute left-[5%] md:left-[8%] top-[18%] md:top-[25%] right-[5%] md:right-auto z-20 pointer-events-none max-w-[90%] md:max-w-none" style={{ opacity: 0 }}>
+          <div className="glass-mobile p-5 md:p-0 rounded-2xl flex flex-col items-center md:items-start text-center md:text-left max-w-[340px] md:max-w-[280px] mx-auto md:mx-0 shadow-xl md:shadow-none">
+            <div className="h-px w-16 bg-white/40 mb-6 hidden md:block" />
+            <p className="mono mb-2 text-[11px] uppercase tracking-[0.4em] text-white/60">Phase 03</p>
+            <h2 className="display text-[clamp(38px,6vw,90px)] leading-[0.9] text-white mb-4 md:mb-8">Synthesis</h2>
+            <div className="flex flex-col gap-4 md:gap-5 w-full">
+               <div className="flex flex-col items-center md:items-start">
+                  <p className="text-[11px] mono uppercase tracking-widest text-[#eedb9f] mb-1 drop-shadow-md">Sensory Integration</p>
+                  <p className="text-[14px] md:text-[15px] text-white/90 leading-relaxed drop-shadow-md font-medium">Merging olfactory and gustatory elements for a full spectrum experience.</p>
+               </div>
+               <div className="flex flex-col items-center md:items-start">
+                  <p className="text-[11px] mono uppercase tracking-widest text-[#eedb9f] mb-1 drop-shadow-md">Molecular Balance</p>
+                  <p className="text-[14px] md:text-[15px] text-white/90 leading-relaxed drop-shadow-md font-medium">Achieving perfect harmony at the molecular level, bridging taste and smell.</p>
+               </div>
+            </div>
           </div>
         </div>
 
         {/* Sequence 02: Right (Now Phase 04) */}
-        <div ref={block4Ref} className="absolute right-[8%] top-[40%] z-20 pointer-events-none text-right" style={{ opacity: 0 }}>
-          <div className="h-px w-16 bg-white/40 mb-6 ml-auto" />
-          <p className="mono mb-2 text-[11px] uppercase tracking-[0.4em] text-white/60 drop-shadow-md">Phase 04</p>
-          <h2 className="display text-[clamp(48px,6vw,90px)] leading-[0.9] text-white mb-8 drop-shadow-lg">Palate</h2>
-          <div className="flex flex-col gap-5 items-end">
-             <div>
-                <p className="text-[11px] mono uppercase tracking-widest text-[#eedb9f] mb-1 drop-shadow-md">Savory Profiles</p>
-                <p className="text-[15px] text-white/90 leading-relaxed max-w-[280px] drop-shadow-md font-medium">Smoked Hickory, Black Truffle, and Sea Salt.</p>
-             </div>
-             <div>
-                <p className="text-[11px] mono uppercase tracking-widest text-[#eedb9f] mb-1 drop-shadow-md">Umami Essence</p>
-                <p className="text-[15px] text-white/90 leading-relaxed max-w-[280px] drop-shadow-md font-medium">Roasted shiitake, aged black garlic, and kelp.</p>
-             </div>
+        <div ref={block4Ref} className="absolute right-[5%] md:right-[8%] top-[20%] md:top-[40%] left-[5%] md:left-auto z-20 pointer-events-none max-w-[90%] md:max-w-none" style={{ opacity: 0 }}>
+          <div className="glass-mobile p-5 md:p-0 rounded-2xl flex flex-col items-center md:items-end text-center md:text-right max-w-[340px] md:max-w-[280px] mx-auto md:mx-0 shadow-xl md:shadow-none">
+            <div className="h-px w-16 bg-white/40 mb-6 ml-auto hidden md:block" />
+            <p className="mono mb-2 text-[11px] uppercase tracking-[0.4em] text-white/60 drop-shadow-md">Phase 04</p>
+            <h2 className="display text-[clamp(38px,6vw,90px)] leading-[0.9] text-white mb-4 md:mb-8 drop-shadow-lg">Palate</h2>
+            <div className="flex flex-col gap-4 md:gap-5 w-full">
+               <div className="flex flex-col items-center md:items-end">
+                  <p className="text-[11px] mono uppercase tracking-widest text-[#eedb9f] mb-1 drop-shadow-md">Savory Profiles</p>
+                  <p className="text-[14px] md:text-[15px] text-white/90 leading-relaxed drop-shadow-md font-medium">Smoked Hickory, Black Truffle, and Sea Salt.</p>
+               </div>
+               <div className="flex flex-col items-center md:items-end">
+                  <p className="text-[11px] mono uppercase tracking-widest text-[#eedb9f] mb-1 drop-shadow-md">Umami Essence</p>
+                  <p className="text-[14px] md:text-[15px] text-white/90 leading-relaxed drop-shadow-md font-medium">Roasted shiitake, aged black garlic, and kelp.</p>
+               </div>
+            </div>
           </div>
         </div>
 
         {/* Sequence 03: Center Top */}
-        <div className="absolute left-0 right-0 top-[15%] z-20 pointer-events-none flex justify-center">
-          <div ref={block5Ref} className="text-center flex flex-col items-center w-full px-5" style={{ opacity: 0 }}>
-            <div className="h-px w-16 bg-white/40 mb-6" />
+        <div className="absolute left-0 right-0 top-[12%] md:top-[15%] z-20 pointer-events-none flex justify-center px-4">
+          <div ref={block5Ref} className="text-center flex flex-col items-center w-full max-w-[420px] md:max-w-none px-5 md:px-0 py-5 md:py-0 rounded-2xl glass-mobile shadow-xl md:shadow-none" style={{ opacity: 0 }}>
+            <div className="h-px w-16 bg-white/40 mb-6 hidden md:block" />
             <p className="mono mb-2 text-[11px] uppercase tracking-[0.4em] text-white/60">Phase 05</p>
-            <h2 className="display text-[clamp(48px,6vw,90px)] leading-[0.9] text-white mb-6">Flavour</h2>
-             <div className="flex flex-col gap-6 items-center">
+            <h2 className="display text-[clamp(38px,6vw,90px)] leading-[0.9] text-white mb-4 md:mb-6">Flavour</h2>
+             <div className="flex flex-col gap-4 md:gap-6 items-center w-full">
                <div className="flex flex-col items-center text-center">
                   <p className="text-[11px] mono uppercase tracking-widest text-[#eedb9f] mb-1 drop-shadow-md">Botanical Extracts</p>
-                  <p className="text-[15px] text-white/90 leading-relaxed max-w-[380px] drop-shadow-md font-medium">Madagascar Vanilla, Wild Mint, and Lemongrass.</p>
+                  <p className="text-[14px] md:text-[15px] text-white/90 leading-relaxed max-w-[380px] drop-shadow-md font-medium">Madagascar Vanilla, Wild Mint, and Lemongrass.</p>
                </div>
                <div className="flex flex-col items-center text-center">
                   <p className="text-[11px] mono uppercase tracking-widest text-[#eedb9f] mb-1 drop-shadow-md">Fruit Essences</p>
-                  <p className="text-[15px] text-white/90 leading-relaxed max-w-[380px] drop-shadow-md font-medium">Sicilian Lemon, Ripe Peach, and Wild Berries.</p>
+                  <p className="text-[14px] md:text-[15px] text-white/90 leading-relaxed max-w-[380px] drop-shadow-md font-medium">Sicilian Lemon, Ripe Peach, and Wild Berries.</p>
                </div>
             </div>
           </div>
         </div>
 
         {/* Sequence 03: Center Bottom (Now Phase 06) */}
-        <div className="absolute left-0 right-0 top-[15%] z-20 pointer-events-none flex justify-center">
-          <div ref={block6Ref} className="text-center flex flex-col items-center w-full px-5" style={{ opacity: 0 }}>
-            <div className="h-px w-16 bg-white/40 mb-6" />
+        <div className="absolute left-0 right-0 top-[12%] md:top-[15%] z-20 pointer-events-none flex justify-center px-4">
+          <div ref={block6Ref} className="text-center flex flex-col items-center w-full max-w-[420px] md:max-w-none px-5 md:px-0 py-5 md:py-0 rounded-2xl glass-mobile shadow-xl md:shadow-none" style={{ opacity: 0 }}>
+            <div className="h-px w-16 bg-white/40 mb-6 hidden md:block" />
             <p className="mono mb-2 text-[11px] uppercase tracking-[0.4em] text-white/60 drop-shadow-md">Phase 06</p>
-            <h2 className="display text-[clamp(48px,6vw,90px)] leading-[0.9] text-white mb-6 drop-shadow-lg">Identity</h2>
-            <div className="flex flex-col gap-6 items-center">
+            <h2 className="display text-[clamp(38px,6vw,90px)] leading-[0.9] text-white mb-4 md:mb-6 drop-shadow-lg">Identity</h2>
+            <div className="flex flex-col gap-4 md:gap-6 items-center w-full">
                <div className="flex flex-col items-center text-center">
                   <p className="text-[11px] mono uppercase tracking-widest text-[#eedb9f] mb-1 drop-shadow-md">Brand Signature</p>
-                  <p className="text-[15px] text-white/90 leading-relaxed max-w-[380px] drop-shadow-md font-medium">A recognisable, repeatable sensory identity tailored to perfection.</p>
+                  <p className="text-[14px] md:text-[15px] text-white/90 leading-relaxed max-w-[380px] drop-shadow-md font-medium">A recognisable, repeatable sensory identity tailored to perfection.</p>
                </div>
                <div className="flex flex-col items-center text-center">
                   <p className="text-[11px] mono uppercase tracking-widest text-[#eedb9f] mb-1 drop-shadow-md">Market Delivery</p>
-                  <p className="text-[15px] text-white/90 leading-relaxed max-w-[380px] drop-shadow-md font-medium">Engineered for the world&apos;s most ambitious brands and discerning palates.</p>
+                  <p className="text-[14px] md:text-[15px] text-white/90 leading-relaxed max-w-[380px] drop-shadow-md font-medium">Engineered for the world&apos;s most ambitious brands and discerning palates.</p>
                </div>
             </div>
           </div>
         </div>
 
         {/* Final Centered Text */}
-        <div ref={finalRef} className="absolute left-1/2 top-1/2 z-30 pointer-events-none text-center flex flex-col items-center w-full px-5" style={{ opacity: 0, transform: 'translate(-50%, -50%)' }}>
-          <div className="h-px w-16 bg-white/40 mb-6" />
+        <div ref={finalRef} className="absolute left-1/2 top-1/2 z-30 pointer-events-none text-center flex flex-col items-center w-[90%] md:w-full max-w-[380px] md:max-w-none px-5 md:px-0 py-6 md:py-0 rounded-2xl glass-mobile shadow-xl md:shadow-none" style={{ opacity: 0, transform: 'translate(-50%, -50%)' }}>
+          <div className="h-px w-16 bg-white/40 mb-6 hidden md:block" />
           <p className="mono mb-4 text-[11px] uppercase tracking-[0.4em] text-white/60">The Finale</p>
-          <h2 className="display text-[clamp(50px,8vw,110px)] leading-[0.9] text-white mb-6">
+          <h2 className="display text-[clamp(42px,8vw,110px)] leading-[0.9] text-white mb-4 md:mb-6">
             Absolute <br/>
             <span className="italic text-white/50">Harmony.</span>
           </h2>
-          <p className="text-[14px] text-white/50 leading-relaxed max-w-[400px]">
+          <p className="text-[13px] md:text-[14px] text-white/70 leading-relaxed max-w-[400px]">
             Where precise engineering meets the art of the senses, creating experiences that linger far beyond the moment.
           </p>
         </div>

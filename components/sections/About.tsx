@@ -83,13 +83,13 @@ export default function About() {
             </div>
 
             <Reveal delay={320}>
-              <div className="mt-12 flex items-center gap-6 border-t border-line pt-8">
-                <a href="#contact-form" className="btn btn-primary">
+              <div className="mt-12 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6 border-t border-line pt-8">
+                <a href="#contact-form" className="btn btn-primary justify-center text-center">
                   Begin a partnership
                 </a>
                 <a
                   href="#segments"
-                  className="mono text-[11px] uppercase tracking-[0.22em] text-ink link-underline"
+                  className="mono text-[11px] uppercase tracking-[0.22em] text-ink link-underline py-2 text-center sm:text-left"
                 >
                   Explore applications
                 </a>

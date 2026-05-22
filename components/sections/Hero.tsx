@@ -53,14 +53,14 @@ export default function Hero() {
           </Reveal>
 
           <Reveal delay={1000}>
-            <div className="mt-10 flex items-center justify-center gap-4 flex-wrap">
-              <a href="#process" className="btn btn-primary">
+            <div className="mt-10 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 max-w-[320px] sm:max-w-none mx-auto">
+              <a href="#process" className="btn btn-primary w-full sm:w-auto justify-center">
                 Explore the process
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden>
                   <path d="M6 2v8M2 6l4 4 4-4" stroke="currentColor" strokeWidth="1.2" />
                 </svg>
               </a>
-              <a href="#contact" className="btn">
+              <a href="#contact" className="btn w-full sm:w-auto justify-center">
                 Commission a scent
               </a>
             </div>

@@ -157,13 +157,13 @@ export default function Contact() {
                     <label className="mono text-[10px] uppercase tracking-[0.22em] text-moss block mb-4">
                       Application
                     </label>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-2.5 md:gap-2">
                       {applications.map((a) => (
                         <button
                           type="button"
                           key={a}
                           onClick={() => setSelectedApp(a)}
-                          className={`px-4 py-2 rounded-full border text-[12px] transition-colors duration-300 ${
+                          className={`px-5 py-2.5 md:px-4 md:py-2 rounded-full border text-[12px] transition-colors duration-300 ${
                             selectedApp === a
                               ? "bg-ink text-bg border-ink"
                               : "border-line hover:border-ink/40"
