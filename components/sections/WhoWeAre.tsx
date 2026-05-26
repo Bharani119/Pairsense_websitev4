@@ -19,14 +19,14 @@ export default function WhoWeAre() {
         }}
       />
       <div className="container-wide relative z-10">
-        <div className="grid grid-cols-12 gap-8">
-          <div className="col-span-12 md:col-span-3">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
+          <div className="col-span-1 md:col-span-3">
             <div className="eyebrow">
               <span className="rule" />
               Manifesto · 03
             </div>
           </div>
-          <div className="col-span-12 md:col-span-9 flex flex-col items-end text-right">
+          <div className="col-span-1 md:col-span-9 flex flex-col items-end text-right">
             <Reveal>
               <h2 className="display text-[clamp(40px,6.6vw,112px)] leading-[0.94] max-w-[900px]">
                 Defining new-gen{" "}

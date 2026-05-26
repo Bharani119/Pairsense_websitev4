@@ -38,9 +38,9 @@ export default function Contact() {
       {/* form block — main background cream; only the left meta panel is forest-green */}
       <div id="contact-form" className="relative py-24 md:py-32">
         <div className="container-wide relative">
-          <div className="grid grid-cols-12 gap-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
             {/* Left: forest-green meta panel */}
-            <div className="col-span-12 lg:col-span-4">
+            <div className="col-span-1 lg:col-span-4">
               <div
                 className="relative rounded-2xl p-10 md:p-12 overflow-hidden h-full"
                 style={{
@@ -116,11 +116,11 @@ export default function Contact() {
             </div>
 
             {/* Right: cream form card (original light treatment) */}
-            <div className="col-span-12 lg:col-span-8">
+            <div className="col-span-1 lg:col-span-8">
               <Reveal delay={120}>
                 <form
                   onSubmit={onSubmit}
-                  className="grid grid-cols-12 gap-x-8 gap-y-10 border border-line rounded-2xl p-8 md:p-12"
+                  className="grid grid-cols-1 md:grid-cols-12 gap-x-8 gap-y-10 border border-line rounded-2xl p-8 md:p-12"
                   style={{ background: "#1e1a0f" }}
                 >
                   <Field
@@ -128,7 +128,7 @@ export default function Contact() {
                     id="name"
                     required
                     placeholder="Your full name"
-                    className="col-span-12 md:col-span-6"
+                    className="col-span-1 md:col-span-6"
                   />
                   <Field
                     label="Work Email"
@@ -136,24 +136,24 @@ export default function Contact() {
                     type="email"
                     required
                     placeholder="your@company.com"
-                    className="col-span-12 md:col-span-6"
+                    className="col-span-1 md:col-span-6"
                   />
                   <Field
                     label="Company"
                     id="company"
                     required
                     placeholder="Brand, house, or atelier"
-                    className="col-span-12 md:col-span-6"
+                    className="col-span-1 md:col-span-6"
                   />
                   <Field
                     label="Country / Market"
                     id="market"
                     placeholder="India · UAE · EU · Global"
-                    className="col-span-12 md:col-span-6"
+                    className="col-span-1 md:col-span-6"
                   />
 
                   {/* application — chip select */}
-                  <div className="col-span-12">
+                  <div className="col-span-1 md:col-span-12">
                     <label className="mono text-[10px] uppercase tracking-[0.22em] text-moss block mb-4">
                       Application
                     </label>
@@ -177,7 +177,7 @@ export default function Contact() {
                   </div>
 
                   {/* message */}
-                  <div className="col-span-12">
+                  <div className="col-span-1 md:col-span-12">
                     <label
                       htmlFor="message"
                       className="mono text-[10px] uppercase tracking-[0.22em] text-moss block mb-3"
@@ -198,16 +198,16 @@ export default function Contact() {
                     label="Budget Range (optional)"
                     id="budget"
                     placeholder="— "
-                    className="col-span-12 md:col-span-6"
+                    className="col-span-1 md:col-span-6"
                   />
                   <Field
                     label="Launch Window"
                     id="window"
                     placeholder="Q3 2026"
-                    className="col-span-12 md:col-span-6"
+                    className="col-span-1 md:col-span-6"
                   />
 
-                  <div className="col-span-12 flex flex-col md:flex-row md:items-center md:justify-between gap-6 pt-4 border-t border-line">
+                  <div className="col-span-1 md:col-span-12 flex flex-col md:flex-row md:items-center md:justify-between gap-6 pt-4 border-t border-line">
                     <div className="mono text-[11px] text-moss uppercase tracking-[0.22em]">
                       By submitting you accept our{" "}
                       <a href="#" className="link-underline text-ink">

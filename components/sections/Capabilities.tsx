@@ -43,8 +43,8 @@ export default function Capabilities() {
   return (
     <section id="capabilities" className="section section-border bg-bg-alt/60">
       <div className="container-wide">
-        <div className="grid grid-cols-12 gap-6 mb-16">
-          <div className="col-span-12 md:col-span-5">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 mb-16">
+          <div className="col-span-1 md:col-span-5">
             <div className="eyebrow">
               <span className="rule" />
               Core Capabilities · 04
@@ -55,7 +55,7 @@ export default function Capabilities() {
               </h2>
             </Reveal>
           </div>
-          <div className="col-span-12 md:col-span-7 md:pl-10">
+          <div className="col-span-1 md:col-span-7 md:pl-10">
             <Reveal delay={120}>
               <p className="text-[14px] leading-[1.8] text-ink/70 max-w-[58ch]">
                 Four interlocking disciplines that together produce a reliable,

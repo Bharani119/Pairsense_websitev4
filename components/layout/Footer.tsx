@@ -5,8 +5,8 @@ export default function Footer() {
   return (
     <footer className="section-border">
       <div className="container-wide py-16">
-        <div className="grid grid-cols-12 gap-8">
-          <div className="col-span-12 md:col-span-4">
+        <div className="grid grid-cols-2 md:grid-cols-12 gap-8">
+          <div className="col-span-2 md:col-span-4">
             <Image
               src="/pairsense-logo.png"
               alt="Pairsense"
@@ -20,7 +20,7 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="col-span-6 md:col-span-2">
+          <div className="col-span-1 md:col-span-2">
             <div className="mono text-[10px] uppercase tracking-[0.22em] text-moss mb-5">
               Connect
             </div>
@@ -32,7 +32,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="col-span-6 md:col-span-2">
+          <div className="col-span-1 md:col-span-2">
             <div className="mono text-[10px] uppercase tracking-[0.22em] text-moss mb-5">
               Practice
             </div>
@@ -45,7 +45,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="col-span-12 md:col-span-4">
+          <div className="col-span-2 md:col-span-4">
             <div className="mono text-[10px] uppercase tracking-[0.22em] text-moss mb-5">
               Newsletter · One brief per quarter
             </div>

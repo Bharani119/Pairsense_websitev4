@@ -38,14 +38,14 @@ export default function Process() {
   return (
     <section id="process" className="section section-border">
       <div className="container-wide">
-        <div className="grid grid-cols-12 gap-8 mb-16">
-          <div className="col-span-12 md:col-span-4">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-16">
+          <div className="col-span-1 md:col-span-4">
             <div className="eyebrow">
               <span className="rule" />
               The Method · 05
             </div>
           </div>
-          <div className="col-span-12 md:col-span-8">
+          <div className="col-span-1 md:col-span-8">
             <Reveal>
               <h2 className="display text-[clamp(40px,5.4vw,84px)] max-w-[900px]">
                 A <span className="italic text-gold">three-movement</span>{" "}

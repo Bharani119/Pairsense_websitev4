@@ -43,14 +43,14 @@ export default function Segments() {
   return (
     <section id="segments" className="section section-border">
       <div className="container-wide">
-        <div className="grid grid-cols-12 gap-8 mb-16">
-          <div className="col-span-12 md:col-span-5">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-16">
+          <div className="col-span-1 md:col-span-5">
             <div className="eyebrow">
               <span className="rule" />
               Industry Segments · 06
             </div>
           </div>
-          <div className="col-span-12 md:col-span-7">
+          <div className="col-span-1 md:col-span-7">
             <Reveal>
               <h2 className="display text-[clamp(40px,5.4vw,80px)] max-w-[920px]">
                 Where our <span className="italic text-gold">signatures</span>{" "}
